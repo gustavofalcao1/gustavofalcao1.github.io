@@ -36,6 +36,7 @@
   -o-transition: 0.15s ease-in;
 }
 .themeButton {
+  cursor: pointer;
   margin-left: 10px;
  }
  #dark {
