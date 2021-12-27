@@ -1,0 +1,98 @@
+//colours
+$base: #858586;
+$frame: #161618;
+$open: #9c9d9e;
+$base2: #858586;
+
+//mixin
+@mixin align-horizontal {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+.desk {
+  width: 70%;
+  margin: 0 auto;
+  padding: 2em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.desk h1 {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   font-weight: 300;
+  color: rgba(#fff, 0.85);
+  margin: 0 0 1em 0;
+  font-size: 22px;
+  span {
+    font-size: 16px;
+    display: block;
+    color: rgba(#fff, 0.75);
+    margin: 5px 0 0 0;
+    font-style: italic;
+  }
+}
+
+//the magic
+.laptop {
+  position: relative;
+  width: 550px;
+  height: 340px;
+  margin: 0 auto;
+  //background: linear-gradient(#e66465, #9198e5);
+  background-image: url(../../../assets/img/macos-monterey-wwdc-21-stock-dark-mode-5k-3440x1440-5585.jpg);
+  background-size: 900px;
+  border: 15px solid $frame;
+  border-top: 20px solid $frame;
+  border-radius: 14px 14px 0 0;
+  margin: 0;
+  box-shadow: 0 0 0 1px $base2;
+  &:before {
+    content: '';
+    bottom: -30px;
+    background: $base;
+    height: 15px;
+    width: 700px;
+    border-radius: 0 0 10px 10px;
+    @include align-horizontal;
+  }
+  &:after {
+    content: '';
+    top: -12px;
+    width: 3px;
+    height: 3px;
+    background: $base;
+    border-radius: 50%;
+    @include align-horizontal;
+  }
+}
+
+//base to make this better
+.base {
+  bottom: -25px;
+  background: $base2;
+  height: 10px;
+  width: 100%;
+  @include align-horizontal;
+  &:before {
+    content: '';
+    border-radius: 0 0 10px 10px;
+    height: 8px;
+    width: 80px;
+    background: $open;
+    @include align-horizontal;
+  }
+  &:after {
+    content:'';
+    position: absolute;
+    height: 20px;
+    width: 700px;
+    border-radius: 0 0 10px 10px;
+  }
+}
+
+
+/* terminal */

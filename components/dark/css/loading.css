@@ -1,0 +1,15 @@
+html {
+  background: #121214;
+}
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -60px 0 0 -60px;
+  width: 100px;
+  height: 100px;
+}

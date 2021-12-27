@@ -1,0 +1,129 @@
+.serviceContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.serviceContainer .card{
+  width: auto;
+  height: 320px;
+  position: relative;
+  padding: 0 30px;
+}
+
+.serviceContainer .card .face{
+  width: 205px;
+  height: 205px;
+  transition: 0.5s;
+}
+
+.serviceContainer .card .face.face1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: #121214;
+  border: 2px solid #4DBD33;
+  border-radius: 20px;
+  -webkit-box-shadow: 2px 2px 10px 0px #000000; 
+  box-shadow: 2px 2px 10px 0px #000000;
+  z-index: 1;
+  transform: translateY(100px);
+}
+
+.serviceContainer .card:hover .face.face1{
+  background: #4DBD33;
+  transform: translateY(0);
+}
+
+.serviceContainer .card .face.face1 .content{
+  color: #4DBD33;
+  fill: #4DBD33;
+  transition: 0.5s;
+}
+
+.serviceContainer .card:hover .face.face1 .content{
+  color: #121214 !important;
+  fill: #121214 !important;
+}
+
+.serviceContainer .card .face.face1 .content .cardSVG {
+  height: 8em;
+  width: 8em;
+}
+
+.serviceContainer .card .face.face1 .content h3{
+  margin: 10px 0 0;
+  padding: 0;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.serviceContainer .card .face.face2{
+  position: relative;
+  background: none;
+  display: flex;
+  justify-content: center;
+  color: #e1e1e6;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  transform: translateY(-100px);
+}
+
+.serviceContainer .card:hover .face.face2{
+  transform: translateY(0);
+}
+
+.serviceContainer .card .face.face2 .content p{
+  margin: -80px 0 0 0;
+  padding: 0;
+  font-size: 1.5em;
+}
+.serviceContainer .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cardIcon {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.gg-list,
+.gg-screen,
+.gg-browser,
+.gg-home-screen {
+  --ggs: 6;
+  border: 1px solid !important;
+}
+.gg-list::before {
+  border-radius: 10px !important;
+  left: 4px !important;
+  margin-top: 1px !important;
+}
+.gg-list::after {
+  height: 2px !important;
+  left: 8px !important;
+  margin-top: 1px !important;
+}
+.gg-website::after {
+  border: 1px solid !important;
+  top: 2px !important;
+}
+.gg-browser::before {
+  height: 1px !important;
+}
+.gg-screen::before {
+  width: 2px !important;
+  height: 3px !important;
+  top: 12px !important;
+  left: 9px !important;
+}
+.gg-screen::after {
+  height: 1px !important;
+  left: 5px !important;
+}
+

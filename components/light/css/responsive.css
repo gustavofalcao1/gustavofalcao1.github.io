@@ -1,0 +1,232 @@
+@media screen and (max-width: 1690px) {
+  .cardboard {
+    height: 11em !important;
+    width: 18em !important;
+  }
+}
+@media screen and (max-width: 1550px) {
+  .cardboard {
+    font-size: 1.2em !important;
+  }
+}
+@media screen and (max-width: 1410px) {
+  .cardboards-wrapper {
+    grid-template-columns: 1fr 1fr 1fr !important;
+  }
+  .cardboard {
+    font-size: 1.3em !important;
+  }
+}
+@media screen and (max-width: 1285px) {
+  .mainTitle {
+    font-size: 1.6em !important;
+  }
+  .mainSubTitle {
+    font-size: 1.2em !important;
+  }
+  .mainSubTitle a {
+    font-size: 0.8em !important;
+  }
+  .contactSend {
+    width: 18em !important;
+  }
+  .footerContent {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: 0 !important;
+    margin: 0 !important;
+  }
+  .footerContainer {
+    margin: 0 !important;
+  }
+  .footerLogoContent {
+    display: none !important;
+    margin: 0 !important;
+  }
+  .footerButton {
+    display: none !important;
+    margin: 0 !important;
+  }
+}
+@media screen and (max-width: 1150px) {
+  .cardboards-wrapper {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .cardboard {
+    height: 14em !important;
+    width: 24em !important;
+  }
+}
+@media screen and (max-width: 1015px) {
+  .cardboard {
+    height: 13em !important;
+    width: 22em !important;
+  }
+  .mainTitle {
+    font-size: 1.4em !important;
+  }
+  .mainSubTitle {
+    font-size: 0.9em !important;
+  }
+  .contactSend {
+    font-size: 0.9em !important;
+  }
+}
+@media screen and (max-width: 950px) {
+  .cardboard {
+    height: 12em !important;
+    width: 20em !important;
+  }
+}
+@media screen and (max-width: 900px) {
+  .desk {
+    display: none !important;
+  }
+  .mainTitle {
+    font-size: 1.2em !important;
+  }
+  .mainSubTitle {
+    flex-direction: column !important;
+    margin-top: -10px !important;
+  }
+  .mainSubTitle a {
+    margin-top: -10px !important;
+    margin-left: 0 !important;
+    font-size: 1.2em !important;
+  }
+  .contactSend {
+    font-size: 0.8em !important;
+    margin: 10px 0px 10px 18px !important;
+  }
+}
+@media screen and (max-width: 850px) {
+  .cardboards-wrapper {
+    grid-template-columns: 1fr !important;
+  }
+  .cardboard {
+    height: 14em !important;
+    width: 26em !important;
+  }
+}
+@media screen and (max-width: 800px) {
+  .mainTitle {
+    font-size: 1.1em !important;
+  }
+}
+@media screen and (max-width: 760px) {
+  .webHeader {
+    display: none !important;
+  }
+  .mobileHeader {
+    display: block !important;
+  }
+}
+@media screen and (max-width: 750px) {
+  .mainSubTitle {
+    margin-bottom: 0 !important;
+  }
+}
+@media screen and (max-width: 700px) {
+  .mainTitle {
+    font-size: 0.9em !important;
+  }
+  .mainSubTitle {
+    margin-bottom: -20px !important;
+  }
+  .contactSend {
+    font-size: 0.7em !important;
+    margin: 10px 0px 10px 20px !important;
+  }
+}
+@media screen and (max-width: 600px) {
+  .cardboard {
+    height: 12em !important;
+    width: 20em !important;
+  }
+  .mainTitle {
+    font-size: 0.8em !important;
+  }
+  .mainSubTitle {
+    margin-bottom: -30px !important;
+  }
+  .contactSend {
+    height: 3em !important;
+    width: 12em !important;
+  }
+}
+@media screen and (max-width: 550px) {
+  .headerLogo h2 {
+    display: none !important;
+  }
+  .mainTitle {
+    font-size: 0.7em !important;
+  }
+  .contactSend {
+    margin: 10px 0px 10px 22px !important;
+  }
+}
+@media screen and (max-width: 500px) {
+  .mainTitle {
+    font-size: 0.7em !important;
+  }
+  .mainSubTitle {
+    font-size: 0.8em !important;
+  }
+  .headerLogo {
+    width: 0 !important;
+  }
+}
+@media screen and (max-width: 450px) {
+  .cardboard {
+    height: 11em !important;
+    width: 18em !important;
+  }
+  .mainTitle {
+    font-size: 0.6em !important;
+  }
+  .mainSubTitle {
+    font-size: 0.7em !important;
+  }
+  .webContact {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 400px) {
+  .cardboard {
+    font-size: 1.2em !important;
+  }
+  .mainTitle {
+    font-size: 0.5em !important;
+  }
+  .mainSubTitle {
+    font-size: 0.6em !important;
+  }
+}
+@media screen and (max-width: 350px) {
+  .cardboard {
+    height: 10em !important;
+    width: 16em !important;
+  }
+  .mainTitle {
+    font-size: 0.4em !important;
+  }
+  .mainSubTitle {
+    font-size: 0.5em !important;
+  }
+  .mainSubTitle a {
+    font-size: 2em !important;
+    margin-top: 0 !important;
+  }
+}
+@media screen and (max-width: 300px) {
+  .cardboard {
+    font-size: 1.1em !important;
+  }
+  .mainTitle {
+    font-size: 0.35em !important;
+  }
+  .overlay a {
+    font-size: 0.7em !important;
+    padding: 12px 26px !important;
+  }
+}
