@@ -1,13 +1,4 @@
 /* Theme */
-window.onload = function() {
-  const dark = localStorage.getItem("dark")
-  if (dark === "false") {
-    light()
-  } 
-  if (dark === "true") {
-    dark()
-  }
-}
 function dark() {
   localStorage.setItem("dark", true)
   document.getElementById('theme').href='../components/dark/css/theme.css'
@@ -23,6 +14,15 @@ function light() {
   document.getElementById('cards').href='../components/light/css/cards.css'
   document.getElementById('grid').href='../components/light/css/grid.css'
   document.getElementById('terminal').href='../components/light/css/terminal.css'
+}
+window.onload = function() {
+  const dark = localStorage.getItem("dark")
+  if (dark === "false") {
+    light()
+  } 
+  if (dark === "true") {
+    dark()
+  }
 }
 
 /* Button */
