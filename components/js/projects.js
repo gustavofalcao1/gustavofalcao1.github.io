@@ -1,4 +1,18 @@
 /* Theme */
+function dark() {
+  localStorage.setItem("dark", true)
+  document.getElementById('theme').href='../../components/dark/css/theme.css'
+  document.getElementById('projects').href='../../components/dark/css/projects.css'
+  document.getElementById('tools').href='../../components/dark/css/tools.css'
+  document.getElementById('grid').href='../../components/dark/css/grid.css'
+}
+function light() {
+  localStorage.setItem("dark", false)
+  document.getElementById('theme').href='../../components/light/css/theme.css'
+  document.getElementById('projects').href='../../components/light/css/projects.css'
+  document.getElementById('tools').href='../../components/light/css/tools.css'
+  document.getElementById('grid').href='../../components/light/css/grid.css'
+}
 window.onload = function() {
   const dark = localStorage.getItem("dark")
   if (dark === "false") {
@@ -7,22 +21,6 @@ window.onload = function() {
   if (dark === "true") {
     dark()
   }
-}
-function dark() {
-  localStorage.setItem("dark", true)
-  document.getElementById('theme').href='../../components/dark/css/theme.css'
-  document.getElementById('tools').href='../../components/dark/css/tools.css'
-  document.getElementById('cards').href='../../components/dark/css/cards.css'
-  document.getElementById('grid').href='../../components/dark/css/grid.css'
-  document.getElementById('terminal').href='../../components/dark/css/terminal.css'
-}
-function light() {
-  localStorage.setItem("dark", false)
-  document.getElementById('theme').href='../../components/light/css/theme.css'
-  document.getElementById('tools').href='../../components/light/css/tools.css'
-  document.getElementById('cards').href='../../components/light/css/cards.css'
-  document.getElementById('grid').href='../../components/light/css/grid.css'
-  document.getElementById('terminal').href='../../components/light/css/terminal.css'
 }
 
 /* Button */
