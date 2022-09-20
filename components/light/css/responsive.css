@@ -29,6 +29,7 @@
   }
   .contactSend {
     width: 18em !important;
+    border-radius: 8%/50% !important;
   }
   .footerContent {
     display: flex !important;
@@ -70,6 +71,7 @@
   }
   .contactSend {
     font-size: 0.9em !important;
+    border-radius: 9%/50% !important;
   }
 }
 @media screen and (max-width: 950px) {
@@ -96,6 +98,7 @@
   }
   .contactSend {
     font-size: 0.8em !important;
+    border-radius: 9%/50% !important;
     margin: 10px 0px 10px 18px !important;
   }
 }
@@ -135,6 +138,7 @@
   }
   .contactSend {
     font-size: 0.7em !important;
+    border-radius: 10%/50% !important;
     margin: 10px 0px 10px 20px !important;
   }
 }

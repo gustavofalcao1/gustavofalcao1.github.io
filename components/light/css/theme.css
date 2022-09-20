@@ -226,7 +226,7 @@ main {
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-bottom: 200px;
+  margin-bottom: 100px;
 }
 .webProjects {
   display: flex;
@@ -264,8 +264,8 @@ main {
   justify-content: center;
   align-items: center;
   width: 70%;
+  max-width: 1000px;
   background-color: #4DBD33;
-  margin-top: 20px;
   border-radius: 20px;
   -webkit-box-shadow: 1px 1px 5px 0px #000000; 
   box-shadow: 1px 1px 5px 0px #000000;
@@ -285,6 +285,7 @@ main {
   justify-content: center;
   align-items: center;
   width: 70%;
+  max-width: 600px;
 }
 .contactBody div {
   width: 100%;

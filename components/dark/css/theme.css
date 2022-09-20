@@ -224,7 +224,7 @@ main {
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-bottom: 200px;
+  margin-bottom: 100px;
 }
 .webProjects {
   display: flex;
@@ -258,8 +258,8 @@ main {
   justify-content: center;
   align-items: center;
   width: 70%;
+  max-width: 1000px;
   background-color: #202024;
-  margin-top: 20px;
   border-radius: 20px;
   -webkit-box-shadow: 2px 2px 10px 0px #000000; 
   box-shadow: 2px 2px 10px 0px #000000;
@@ -279,6 +279,7 @@ main {
   justify-content: center;
   align-items: center;
   width: 70%;
+  max-width: 600px;
 }
 .contactBody div {
   width: 100%;
@@ -372,7 +373,7 @@ main {
   color: #4DBD33;
   font-size: 1em;
   font-weight: bold;
-  border-radius: 8%/50%;
+  border-radius: 5%/50%;
   outline: none;
   cursor: pointer;
   transition: 0.15s ease-in;
