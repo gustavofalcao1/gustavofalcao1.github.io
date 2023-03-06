@@ -2,15 +2,9 @@
   width: 70%;
   margin: 0 auto;
   padding: 2em;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .desk h1 {
@@ -20,7 +14,6 @@
   margin: 0 0 1em 0;
   font-size: 22px;
 }
-
 .desk h1 span {
   font-size: 16px;
   display: block;
@@ -34,18 +27,16 @@
   width: 550px;
   height: 340px;
   margin: 0 auto;
-  background-image: url(../../../assets/img/macos-monterey-wwdc-21-stock-dark-mode-5k-3440x1440-5585.jpg);
+  background-image: url(../../../assets/img/macos-monterey-wwdc-21-stock-dark-mode-5k-3440x1440-5585.webp);
   background-size: 900px;
   border: 15px solid #161618;
   border-top: 20px solid #161618;
   border-radius: 14px 14px 0 0;
   margin: 0;
-  -webkit-box-shadow: 0 0 0 1px #858586;
-          box-shadow: 0 0 0 1px #858586;
+  box-shadow: 0 0 0 1px #858586;
 }
-
 .laptop:before {
-  content: '';
+  content: "";
   bottom: -30px;
   background: #858586;
   height: 15px;
@@ -53,12 +44,10 @@
   border-radius: 0 0 10px 10px;
   position: absolute;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
 }
-
 .laptop:after {
-  content: '';
+  content: "";
   top: -12px;
   width: 3px;
   height: 3px;
@@ -66,8 +55,7 @@
   border-radius: 50%;
   position: absolute;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .base {
@@ -77,29 +65,24 @@
   width: 100%;
   position: absolute;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
 }
-
 .base:before {
-  content: '';
+  content: "";
   border-radius: 0 0 10px 10px;
   height: 8px;
   width: 80px;
   background: #9c9d9e;
   position: absolute;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
 }
-
 .base:after {
-  content: '';
+  content: "";
   position: absolute;
   height: 20px;
   width: 700px;
   border-radius: 0 0 10px 10px;
 }
 
-/* terminal */
-/*# sourceMappingURL=laptop.css.map */
+/* terminal *//*# sourceMappingURL=laptop.css.map */

@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AAGA,AAAA,QAAQ,CAAC;EACP,gBAAgB,EAAE,SAAS,EAJvB,WAAkB;EAKtB,iBAAiB,EAAE,CAAC;EACpB,SAAS,EAAE,IAAI,CALV,IAAI,CAKa,MAAM,CAAC,QAAQ;CACtC;;AACD,UAAU,CAAV,IAAU;EACR,KAAK;IACH,gBAAgB,EAAE,UAAS,EAVzB,WAAkB;IAWpB,iBAAiB,EAAE,WAAU;;EAE/B,MAAM;IACJ,gBAAgB,EAAE,UAAS,EAdzB,WAAkB;IAepB,iBAAiB,EAAE,WAAU;;EAE/B,IAAI;IACF,gBAAgB,EAAE,SAAS,EAlBzB,WAAkB;IAmBpB,iBAAiB,EAAE,YAAU",
-    "sources": [
-        "infinity.scss"
-    ],
-    "names": [],
-    "file": "infinity.css"
-}
+{"version":3,"sources":["infinity.scss","infinity.css"],"names":[],"mappings":"AAGA;EACE,iDAAA;EACA,oBAAA;EACA,oCAAA;ACFF;;ADIA;EACE;IACE,mDAAA;IACA,mCAAA;ECDF;EDGA;IACE,mDAAA;IACA,mCAAA;ECDF;EDGA;IACE,iDAAA;IACA,oCAAA;ECDF;AACF","file":"infinity.css"}
