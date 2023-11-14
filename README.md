@@ -11,5 +11,5 @@ My Personal Portfolio in Static HTML
 
 * HTML
 * SCSS
-* JS
+* JavaScript
 
