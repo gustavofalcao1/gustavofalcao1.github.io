@@ -10,6 +10,6 @@ My Personal Portfolio in Static HTML
 ## Technologies
 
 * HTML
-* CSS
+* SCSS
 * JS
 
