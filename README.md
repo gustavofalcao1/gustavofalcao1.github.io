@@ -1,2 +1,15 @@
-# gustavofalcao1.github.io
-My personal portfolio
+# <a href="https://gustavofalcao.pt">Gustavo Falcão</a>
+
+My Personal Portfolio in Static HTML
+
+<!--
+<div align="center">
+  <img src="public/screenshots/home.png" alt="Home Web Page">
+</div>
+-->
+## Technologies
+
+* HTML
+* CSS
+* JS
+
