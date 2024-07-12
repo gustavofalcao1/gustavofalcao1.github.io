@@ -3,7 +3,7 @@
 My Personal Portfolio in Static HTML
 
 <div align="center">
-  <img src="screenshots/Captura de Tela 2023-11-14 às 14.09.13.png" alt="Home Web Page">
+  <img src="screenshots/00.png" alt="Home Web Page">
 </div>
 
 ## Technologies
