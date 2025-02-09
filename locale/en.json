@@ -1,0 +1,88 @@
+{
+  "config": {
+    "lang": "en",
+    "langName": "English",
+    "langCode": "EN",
+    "loading": "Loading..."
+  },
+  "title": "Software Engineer",
+  "name": "Gustavo Falcão",
+  "hi": "Hey, there 👋",
+  "im": "I'm",
+  "description": "I turn problems into solutions, complexity into efficiency, and coffee into scalable code ☕💻🚀",
+  "pageTitle": "Gustavo Falcão - Software Engineer",
+  "metaDescription": "Gustavo Falcão's personal website. Software Engineer, Full Stack Developer, and Open Source enthusiast.",
+  "metaKeywords": "software engineer, developer, portfolio",
+  "menu": {
+    "home": "Works",
+    "about": "About",
+    "play": "Playground",
+    "contact": "Contact"
+  },
+  "404": {
+    "pageTitle": "404 - Page Not Found",
+    "title": "You found the limit of this matrix!",
+    "heading": "404",
+    "error": "Oops! Looks like you found a bug.",
+    "description": "The page you're looking for was abducted by aliens... 👽",
+    "button": "Back to Home"
+  },
+  "home": {
+    "title": "Works"
+  },
+  "projects": {
+    "btn": "View project",
+    "project1": {
+      "title": "Cluey-App",
+      "description": "Social network mobile app with AI focused on collaborative work, task organization and productivity."
+    },
+    "project2": {
+      "title": "Cluey-Web",
+      "description": "Social network web app with AI focused on collaborative work, task organization and productivity."
+    },
+    "project3": {
+      "title": "GeekSmart",
+      "description": "An employee and inventory manager, simple, light and safe."
+    },
+    "project4": {
+      "title": "Tasks",
+      "description": "APP Mobile Task Management Productive, focusing on minimalism and optimization."
+    },
+    "project5": {
+      "title": "WebSchool",
+      "description": "School management platform with room control, users, stock and requests."
+    },
+    "project6": {
+      "title": "Starfield Language Tools",
+      "description": "Since Bethesda Game Studios didn't put a simple option to change the Starfield game's language, I created this simple application to do it for them."
+    },
+    "project7": {
+      "title": "NodeDO",
+      "description": "Node task manager, with well -structured and light, objective database is to be simple and efficient with pure node."
+    },
+    "project8": {
+      "title": "AiChat CLI",
+      "description": "A command chat, context and customization options and a method of copying the results to the transfer area without the system's graphical interface."
+    },
+    "project9": {
+      "title": "Project Name 9",
+      "description": "Detailed description of project 9"
+    },
+    "project10": {
+      "title": "Project Name 10",
+      "description": "Detailed description of project 10"
+    }
+  },
+  "about": {
+    "pageTitle": "Gustavo Falcão - Who am I?",
+    "metaDescription": "Learn more about Gustavo Falcão, a Full Stack Software Engineer with experience in modern web development.",
+    "title": "Who am I?",
+    "bio1": "I'm a Software Engineer with over 5 years of experience, specialized in full-stack web development and passionate about creating innovative technological solutions.",
+    "bio2": "My programming journey started early, and since then I've been constantly learning and adapting to new technologies and market trends.",
+    "skillsTitle": "Skills",
+    "experienceTitle": "Experience"
+  },
+  "footer": {
+    "rights": "All rights reserved"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "config": {
+    "lang": "pt",
+    "langName": "Português",
+    "langCode": "PT",
+    "loading": "Carregando..."
+  },
+  "title":"Engenheiro de Software",
+  "name":"Gustavo Falcão",
+  "hi": "Olá 👋",
+  "im": "Sou o",
+  "description": "Transformo problemas em soluções, complexidade em eficiência e café em código escalável ☕💻🚀",
+  "pageTitle": "Gustavo Falcão - Engenheiro de Software",
+  "metaDescription": "Website pessoal de Gustavo Falcão. Engenheiro de Software, Desenvolvedor Full Stack e entusiasta de Open Source.",
+  "metaKeywords": "engenheiro de software, desenvolvedor, portfólio",
+  "menu": {
+    "home": "Projetos",
+    "about": "Sobre",
+    "play": "Playground",
+    "contact": "Contato"
+  },
+  "404": {
+    "pageTitle": "404 - Página não encontrada",
+    "title": "Você encontrou o limite dessa matrix!",
+    "heading": "404",
+    "error": "Ops! Parece que você encontrou um bug.",
+    "description": "A página que você está procurando foi abduzida por aliens... 👽",
+    "button": "Voltar para Home"
+  },
+  "projects": {
+    "btn": "Ver projeto",
+    "project1": {
+      "title": "Cluey-App",
+      "description": "App mobile de rede social com IA focado em trabalho colaborativo, organização de tarefas e produtividade."
+    },
+    "project2": {
+      "title": "Cluey-Web",
+      "description": "App web de rede social com IA focado em trabalho colaborativo, organização de tarefas e produtividade."
+    },
+    "project3": {
+      "title": "GeekSmart",
+      "description": "Um gerente de funcionários e inventário, simples, leve e seguro."
+    },
+    "project4": {
+      "title": "Tasks",
+      "description": "App mobile produtiva de gerenciamento de tarefas, com foco no minimalismo e otimização."
+    },
+    "project5": {
+      "title": "WebSchool",
+      "description": "Plataforma de gestão escolar com controlo de salas, utilizadores, stock e requisições."
+    },
+    "project6": {
+      "title": "Starfield Language Tools",
+      "description": "Como a Bethesda Game Studios não colocou uma opção simples para alterar o idioma do jogo Starfield, criei esse aplicativo simples para fazê -lo."
+    },
+    "project7": {
+      "title": "NodeDO",
+      "description": "Gestor de tarefas em node, com base de dados bem estruturada e leve, objetivo é ser simples e eficiente com node puro."
+    },
+    "project8": {
+      "title": "AiChat CLI",
+      "description": "Um chat de IA em linha de comando, com contexto e opções de personalização e um método de copiar os resultados para a área de transferência, sem precisar de interface gráfica no sistema."
+    },
+    "project9": {
+      "title": "Nome do Projeto 9",
+      "description": "Descrição detalhada do projeto 9"
+    },
+    "project10": {
+      "title": "Nome do Projeto 10",
+      "description": "Descrição detalhada do projeto 10"
+    }
+  },
+  "about": {
+    "pageTitle": "Gustavo Falcão - Quem sou eu?",
+    "metaDescription": "Saiba mais sobre Gustavo Falcão, Engenheiro de Software Full Stack com experiência em desenvolvimento web moderno.",
+    "title": "Quem sou eu?",
+    "bio1": "Sou um Engenheiro de Software com mais de 5 anos de experiência, especializado em desenvolvimento web full-stack e apaixonado por criar soluções tecnológicas inovadoras.",
+    "bio2": "Minha jornada na programação começou cedo, e desde então venho constantemente aprendendo e me adaptando às novas tecnologias e tendências do mercado.",
+    "skillsTitle": "Habilidades",
+    "experienceTitle": "Experiência"
+  },
+  "footer": {
+    "rights": "Todos os direitos reservados"
+  }
+}
