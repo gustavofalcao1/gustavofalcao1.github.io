@@ -75,12 +75,77 @@
   },
   "about": {
     "pageTitle": "Gustavo Falcão - Who am I?",
-    "metaDescription": "Learn more about Gustavo Falcão, a Full Stack Software Engineer with experience in modern web development.",
+    "metaDescription": "Learn more about Gustavo Falcão, Solutions Architect and Software Engineer.",
     "title": "Who am I?",
-    "bio1": "I'm a Software Engineer with over 5 years of experience, specialized in full-stack web development and passionate about creating innovative technological solutions.",
-    "bio2": "My programming journey started early, and since then I've been constantly learning and adapting to new technologies and market trends.",
-    "skillsTitle": "Skills",
-    "experienceTitle": "Experience"
+    "bio1": "I'm Gustavo Falcão, I'm a Solutions Architect and Software Engineer with over a decade of technology experience. My journey began in electronics, evolved to web development and Linux automation, and culminated in my Computer Engineering degree.",
+    "bio2": "This multidisciplinary path gives me a unique view of development, combining practical electronics knowledge, advanced operating systems mastery, and software development expertise.",
+    "sections": {
+      "expertise": "Skills",
+      "evolution": "Evolution"
+    },
+    "categories": {
+      "systems": "Systems & DevOps",
+      "development": "Development",
+      "architecture": "Architecture"
+    },
+    "evolution": {
+      "0": {
+        "period": "2022 - Atual",
+        "where": "Degree in Computer Engineering and Training",
+        "position": "Solutions Architect & Software Engineer"
+      },
+      "1": {
+        "period": "2018 - 2022",
+        "where": "Professional Experience, Self-Study and Courses",
+        "position": "Desenvolvedor Full Stack & SysAdmin"
+      },
+      "2": {
+        "period": "2013 - 2018",
+        "where": "Professional Experience and Self-Study",
+        "position": "Electronics Technician & Programmer"
+      }
+    },
+    "expertise": {
+      "systems": {
+        "icon": "server",
+        "skills": [
+          "Linux (Ubuntu, Debian, CentOS)",
+          "Windows Server & Desktop",
+          "macOS",
+          "Shell Scripting (Bash, PowerShell)",
+          "Docker & Kubernetes",
+          "CI/CD Pipelines",
+          "Cloud (AWS, GCP)",
+          "CLI Development",
+          "Headless Server Configuration",
+          "System Automation"
+        ]
+      },
+      "development": {
+        "icon": "code",
+        "skills": [
+          "Full Stack Development",
+          "Node.js & TypeScript",
+          "React & Next.js",
+          "APIs RESTful",
+          "Python (CLI, API, AI)",
+          "System Integration",
+          "Cross-Platform Development",
+          "Clean Code & Best Practices"
+        ]
+      },
+      "architecture": {
+        "icon": "template",
+        "skills": [
+          "Distributed Systems",
+          "Scalable Solutions",
+          "System Design",
+          "Performance Optimization",
+          "Technical Leadership",
+          "Cloud Architecture"
+        ]
+      }
+    }
   },
   "footer": {
     "rights": "All rights reserved"

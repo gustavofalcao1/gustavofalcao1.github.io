@@ -41,6 +41,17 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.11.0/css/flag-icons.min.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   <link rel="stylesheet" href="/styles.css">
+  <style>
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    .animate-gradient {
+      animation: gradient 6s linear infinite;
+    }
+  </style>
 </head>
 <body class="bg-darker text-gray-100" data-page="about">
   <!-- Desktop Menu -->
@@ -48,7 +59,7 @@
     <nav class="flex items-center gap-4 lg:gap-6">
       <!-- Logo -->
       <a href="/" class="flex-shrink-0">
-        <img src="../assets/img/logo.webp" width="32px" alt="Logo" class="rounded-full">
+        <img src="/assets/img/logo.webp" width="32px" alt="Logo" class="rounded-full">
       </a>
       <div class="hidden md:flex items-center gap-4 lg:gap-6" id="main-menu">
         <div class="w-px h-4 bg-light/10 hidden md:block"></div>
@@ -57,8 +68,8 @@
             <span class="font-medium text-lg lg:text-xl" data-i18n="menu.home"></span>
             <span class="font-medium ml-1 border page-home:border-primary border-light group-hover:border-primary rounded-md px-2 text-sm translate-y-0.5">/</span>
           </a>
-          <a href="../about/" class="text-light page-about:text-primary hover:text-primary transition-colors font-medium text-lg lg:text-xl" data-i18n="menu.about"></a>
-          <a href="../play/" class="text-light page-play:text-primary hover:text-primary transition-colors font-medium text-lg lg:text-xl" data-i18n="menu.play"></a>
+          <a href="/about/" class="text-light page-about:text-primary hover:text-primary transition-colors font-medium text-lg lg:text-xl" data-i18n="menu.about"></a>
+          <a href="/play/" class="text-light page-play:text-primary hover:text-primary transition-colors font-medium text-lg lg:text-xl" data-i18n="menu.play"></a>
           <a href="#contact" class="text-light page-contact:text-primary hover:text-primary transition-colors font-medium text-lg lg:text-xl" data-i18n="menu.contact"></a>
         </div>
         <div class="w-px h-4 bg-light/10 hidden md:block"></div>
@@ -93,7 +104,7 @@
     <nav class="flex items-center justify-between max-w-lg mx-auto px-6">
       <!-- Home -->
       <a href="/" class="text-light">
-        <img src="../assets/img/logo.webp" width="32px" alt="Logo" class="rounded-full">
+        <img src="/assets/img/logo.webp" width="32px" alt="Logo" class="rounded-full">
       </a>
 
       <!-- Menu Button -->
@@ -129,8 +140,8 @@
              <span class="font-medium text-xl" data-i18n="menu.home"></span>
              <span class="font-medium border page-home:border-primary border-light group-hover:border-primary rounded-md px-2 ml-1 text-sm">/</span>
            </a>
-           <a href="../about/" class="page-about:text-primary text-light hover:text-primary transition-colors font-medium text-xl" data-i18n="menu.about"></a>
-           <a href="../play/" class="page-play:text-primary text-light hover:text-primary transition-colors font-medium text-xl" data-i18n="menu.play"></a>
+           <a href="/about/" class="page-about:text-primary text-light hover:text-primary transition-colors font-medium text-xl" data-i18n="menu.about"></a>
+           <a href="/play/" class="page-play:text-primary text-light hover:text-primary transition-colors font-medium text-xl" data-i18n="menu.play"></a>
            <a href="#contact" class="page-contact:text-primary text-light hover:text-primary transition-colors font-medium text-xl" data-i18n="menu.contact"></a>
          </nav>
        </div>
@@ -150,13 +161,139 @@
       </div>
     </div>
   </header>
-  <main class="min-h-screen w-full lg:pt-24 mb-40">
-    <div class="text-center z-10">
-      <h1 class="text-5xl font-bold py-2 my-10 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent" data-i18n="config.loading"></h1>
-    </div>
+  <main class="min-h-screen w-full lg:pt-24 mb-20">
+    <!-- Bio Section -->
+    <section class="hero relative flex flex-col md:flex-row items-start justify-center px-4 md:px-6 gap-8 mt-4 lg:mt-12 max-w-7xl mx-auto">
+      <!-- Background Effect -->
+      <div class="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent rounded-3xl filter blur-3xl opacity-30"></div>
+      
+      <div class="relative w-full flex flex-col items-start justify-start text-left z-10">
+        <!-- Title com efeito de gradiente animado -->
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 animate-gradient bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%] bg-clip-text text-transparent" data-i18n="about.title"></h1>
+        
+        <!-- Bio Cards com Glassmorphism -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full mb-12">
+          <div class="p-6 rounded-2xl bg-dark/30 backdrop-blur-md border border-primary/10 hover:border-primary/30 transition-all duration-300 group">
+            <p data-i18n="about.bio1" class="text-light text-lg group-hover:text-white transition-colors"></p>
+          </div>
+          <div class="p-6 rounded-2xl bg-dark/30 backdrop-blur-md border border-primary/10 hover:border-primary/30 transition-all duration-300 group">
+            <p data-i18n="about.bio2" class="text-light text-lg group-hover:text-white transition-colors"></p>
+          </div>
+        </div>
+
+        <!-- Expertise Grid -->
+        <div class="w-full mb-12">
+          <h2 class="text-2xl md:text-3xl font-bold mb-6 text-light flex items-center gap-3">
+            <span class="h-px flex-grow bg-gradient-to-r from-primary/50 to-transparent"></span>
+            <span data-i18n="about.sections.expertise"></span>
+            <span class="h-px flex-grow bg-gradient-to-l from-primary/50 to-transparent"></span>
+          </h2>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Systems & DevOps Card -->
+            <div class="group p-6 rounded-2xl bg-dark/30 backdrop-blur-md border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1">
+              <h3 class="text-xl font-medium mb-4 text-primary group-hover:text-secondary transition-colors" data-i18n="about.categories.systems"></h3>
+              <ul class="space-y-3" id="systems-list">
+                <!-- Items will be populated via JS -->
+              </ul>
+            </div>
+
+            <!-- Development Card -->
+            <div class="group p-6 rounded-2xl bg-dark/30 backdrop-blur-md border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1">
+              <h3 class="text-xl font-medium mb-4 text-primary group-hover:text-secondary transition-colors" data-i18n="about.categories.development"></h3>
+              <ul class="space-y-3" id="development-list">
+                <!-- Items will be populated via JS -->
+              </ul>
+            </div>
+
+            <!-- Architecture Card -->
+            <div class="group p-6 rounded-2xl bg-dark/30 backdrop-blur-md border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1">
+              <h3 class="text-xl font-medium mb-4 text-primary group-hover:text-secondary transition-colors" data-i18n="about.categories.architecture"></h3>
+              <ul class="space-y-3" id="architecture-list">
+                <!-- Items will be populated via JS -->
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- evolution Timeline -->
+        <div class="w-full">
+          <h2 class="text-2xl md:text-3xl font-bold mb-6 text-light flex items-center gap-3">
+            <span class="h-px flex-grow bg-gradient-to-r from-primary/50 to-transparent"></span>
+            <span data-i18n="about.sections.evolution"></span>
+            <span class="h-px flex-grow bg-gradient-to-l from-primary/50 to-transparent"></span>
+          </h2>
+          <!-- 00 -->
+          <div class="relative pl-8 border-l-2 border-primary/30">
+            <div class="absolute w-4 h-4 -left-[9px] bottom-[65%] animate-pulse">
+              <div class="w-full h-full bg-gradient-to-r from-primary to-secondary"
+                   style="clip-path: polygon(50% 0%, 0% 100%, 100% 100%)">
+              </div>
+            </div>
+            <h3 class="text-xl font-medium text-primary" data-i18n="about.evolution.0.position"></h3>
+            <p class="text-light/80" data-i18n="about.evolution.0.period"></p>
+            <p class="text-light/80" data-i18n="about.evolution.0.where"></p>
+          </div>
+          <!-- 01 -->
+          <div class="relative mt-6 pl-8 border-l-2 border-primary/30">
+             <div class="absolute w-4 h-4 -left-[9px] bottom-[50%] animate-pulse">
+              <div class="w-full h-full bg-gradient-to-r from-primary to-secondary"
+                   style="clip-path: polygon(50% 0%, 0% 100%, 100% 100%)">
+              </div>
+            </div>
+            <h3 class="text-xl font-medium text-primary" data-i18n="about.evolution.1.position"></h3>
+            <p class="text-light/80" data-i18n="about.evolution.1.period"></p>
+            <p class="text-light/80" data-i18n="about.evolution.1.where"></p>
+          </div>
+          <!-- 02 -->
+          <div class="relative mt-6 pl-8 border-l-2 border-primary/30">
+             <div class="absolute w-4 h-4 -left-[9px] bottom-[20%] animate-pulse">
+              <div class="w-full h-full bg-gradient-to-r from-primary to-secondary"
+                   style="clip-path: polygon(50% 0%, 0% 100%, 100% 100%)">
+              </div>
+            </div>
+            <h3 class="text-xl font-medium text-primary" data-i18n="about.evolution.2.position"></h3>
+            <p class="text-light/80" data-i18n="about.evolution.2.period"></p>
+            <p class="text-light/80" data-i18n="about.evolution.2.where"></p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
+  <!-- Footer -->
+  <footer class="py-8 px-4 mt-auto mb-20 lg:mb-0">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 border-t border-primary/10 pt-8">
+        <!-- Copyright -->
+        <p class="text-light/60 text-sm order-2 md:order-1">
+          &copy; <span id="year">2024</span> Gustavo Falcão. <span data-i18n="footer.rights"></span>.
+        </p>
+        
+        <!-- Social Links -->
+        <div class="flex items-center gap-4 order-1 md:order-2">
+          <a href="https://github.com/gustavofalcao1" target="_blank" rel="noopener" class="text-light/60 hover:text-primary transition-colors">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="https://linkedin.com/in/gustavofalcao1" target="_blank" rel="noopener" class="text-light/60 hover:text-primary transition-colors">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
   <script src="/js/i18n.js"></script>
+  <script src="/js/about.js"></script>
   <script src="/main.js"></script>
+  <script>
+    // Atualizar ano automaticamente
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
