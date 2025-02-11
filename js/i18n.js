@@ -4,24 +4,23 @@ class I18n {
     this.currentLang = this.getInitialLanguage();
   }
 
-  // Detecta o idioma inicial baseado na preferência do usuário ou navegador
+  // Detects the initial language based on the preference of the user or browser
   getInitialLanguage() {
-    // Tenta obter do localStorage primeiro
+    // Try to get from LocaStorage first
     const cached = localStorage.getItem('preferred-language');
     if (cached) {
       return cached;
     }
 
-    // Se não houver cache, detecta do navegador
+    // Special case: Check for Martian browsers (just for fun)
+    const isMartianBrowser = navigator.userAgent.includes('Mars');
+    if (isMartianBrowser) return 'mar';
+
+    // Regular language detection
     const browserLang = navigator.language || navigator.userLanguage;
-    const isPortuguese = /^pt\b/.test(browserLang);
+    const defaultLang = /^pt\b/.test(browserLang) ? 'pt' : 'en';
     
-    // Define o idioma padrão baseado na detecção
-    const defaultLang = isPortuguese ? 'pt' : 'en';
-    
-    // Salva a preferência
     localStorage.setItem('preferred-language', defaultLang);
-    
     return defaultLang;
   }
 
@@ -41,14 +40,24 @@ class I18n {
       }
       
       this.currentLang = lang;
-      document.documentElement.lang = lang;
-      
-      // Salva a preferência do usuário
+      this.applyLanguageStyles(lang);
       localStorage.setItem('preferred-language', lang);
-      
       this.translatePage();
+      
+      // Dispatch event for other components
+      document.dispatchEvent(new CustomEvent('languageChanged', { detail: { language: lang } }));
     } catch (error) {
       console.error('Erro ao definir idioma:', error);
+    }
+  }
+
+  // Add Martian font style for mar language
+  applyLanguageStyles(lang) {
+    document.documentElement.lang = lang;
+    if (lang === 'mar') {
+      document.body.classList.add('martian-font');
+    } else {
+      document.body.classList.remove('martian-font');
     }
   }
 

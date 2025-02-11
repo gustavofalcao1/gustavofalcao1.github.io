@@ -1,18 +1,22 @@
 function loadExpertiseData() {
   const currentLang = document.documentElement.lang;
-  console.log('Loading expertise data for:', currentLang);
   
   fetch(`/locale/${currentLang}.json`)
     .then(response => response.json())
     .then(data => {
-      const expertiseData = data.about.expertise;
+      // Access the correct JSON structure
+      const categories = data.about.sections.expertise.categories;
       
-      Object.keys(expertiseData).forEach(section => {
-        const sectionData = expertiseData[section];
-        const listElement = document.getElementById(`${section}-list`);
+      // Iterate over each category
+      Object.keys(categories).forEach(category => {
+        const listElement = document.getElementById(`${category}-list`);
         
         if (listElement) {
-          listElement.innerHTML = sectionData.skills
+          // Get the items for the current category
+          const items = categories[category].items;
+          
+          // Update the list with the new items
+          listElement.innerHTML = items
             .map(skill => `
               <li class="flex items-center gap-2 text-light group-hover:text-white transition-colors">
                 <svg class="w-4 h-4 text-primary group-hover:text-secondary transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -27,20 +31,8 @@ function loadExpertiseData() {
     .catch(error => console.error('Error loading expertise data:', error));
 }
 
-// Observa mudanças no atributo lang do HTML
-const observer = new MutationObserver((mutations) => {
-  mutations.forEach((mutation) => {
-    if (mutation.attributeName === 'lang') {
-      loadExpertiseData();
-    }
-  });
-});
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', loadExpertiseData);
 
-// Inicia a observação
-observer.observe(document.documentElement, {
-  attributes: true,
-  attributeFilter: ['lang']
-});
-
-// Carrega os dados iniciais
-loadExpertiseData();
+// Update when language changes
+document.addEventListener('languageChanged', loadExpertiseData);

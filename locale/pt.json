@@ -80,71 +80,68 @@
     "bio1": "Me chamo Gustavo Falcão, sou um Arquiteto de Soluções e Engenheiro de Software com mais de uma década de experiência em tecnologia. Minha jornada começou na eletrônica, evoluiu para desenvolvimento web e automação Linux, e culminou com minha formação em Engenharia Informática.",
     "bio2": "Esta trajetória multidisciplinar me permite ter uma visão única do desenvolvimento, combinando conhecimento prático em eletrônica, domínio avançado de sistemas operacionais e habilidade em desenvolvimento de software.",
     "sections": {
-      "expertise": "Habilidades",
-      "evolution": "Evolução"
-    },
-    "categories": {
-      "systems": "Sistemas & DevOps",
-      "development": "Desenvolvimento",
-      "architecture": "Arquitetura"
-    },
-    "evolution": {
-      "0": {
-        "period": "2022 - Atual",
-        "where": "Licenciatura em Engenharia Informática e Formações",
-        "position": "Arquiteto de Soluções & Engenheiro de Software"
+      "expertise": {
+        "title": "Habilidades",
+        "categories": {
+          "systems": {
+            "title": "Sistemas & DevOps",
+            "items": [
+              "Linux (Debian, Arch, Fedora)",
+              "Windows Server & Desktop",
+              "macOS",
+              "Shell Scripting (Bash, PowerShell)",
+              "Docker & Kubernetes",
+              "CI/CD Pipelines",
+              "Cloud (AWS, GCP)",
+              "Desenvolvimento de CLI",
+              "Automatização de Sistemas"
+            ]
+          },
+          "development": {
+            "title": "Desenvolvimento",
+            "items": [
+              "Desenvolvimento Full Stack",
+              "Node.js & TypeScript",
+              "React & Next.js",
+              "APIs RESTful",
+              "Python (CLI, API, AI)",
+              "Integração de Sistemas",
+              "Desenvolvimento Cross-Platform",
+              "Código Limpo e Boas Práticas"
+            ]
+          },
+          "architecture": {
+            "title": "Arquitetura",
+            "skills": [
+              "Sistemas Distribuídos",
+              "Soluções Escaláveis",
+              "Otimização de Performance",
+              "Design de APIs e Sistemas",
+              "Design de Banco de Dados",
+              "Arquitetura de Cloud",
+              "Arquitetura de Microsserviços",
+              "Segurança de Sistemas"
+            ]
+          }
+        }
       },
-      "1": {
-        "period": "2018 - 2022",
-        "where": "Técnico em Redes e Sistemas, Autodidata e Cursos",
-        "position": "Desenvolvedor Full Stack & SysAdmin"
-      },
-      "2": {
-        "period": "2013 - 2018",
-        "where": "Experiencia Profissional e Estudos Autodidatas",
-        "position": "Técnico em Eletrónica e Programador"
-      }
-    },
-    "expertise": {
-      "systems": {
-        "icon": "server",
-        "skills": [
-          "Linux (Debian, Arch, Fedora)",
-          "Windows Server & Desktop",
-          "macOS",
-          "Shell Scripting (Bash, PowerShell)",
-          "Docker & Kubernetes",
-          "CI/CD Pipelines",
-          "Cloud (AWS, GCP)",
-          "Desenvolvimento de CLI",
-          "Automatização de Sistemas"
-        ]
-      },
-      "development": {
-        "icon": "code",
-        "skills": [
-          "Desenvolvimento Full Stack",
-          "Node.js & TypeScript",
-          "React & Next.js",
-          "APIs RESTful",
-          "Python (CLI, API, AI)",
-          "Integração de Sistemas",
-          "Desenvolvimento Cross-Platform",
-          "Desenvolvimento de Aplicações Móveis"
-        ]
-      },
-      "architecture": {
-        "icon": "template",
-        "skills": [
-          "Sistemas Distribuídos",
-          "Soluções Escaláveis",
-          "Otimização de Performance",
-          "Design de APIs e Sistemas",
-          "Design de Banco de Dados",
-          "Arquitetura de Cloud",
-          "Arquitetura de Microsserviços",
-          "Segurança de Sistemas"
-        ]
+      "evolution": {
+        "title": "Evolução",
+        "0": {
+          "period": "2022 - Atual",
+          "where": "Licenciatura em Engenharia Informática e Formações",
+          "position": "Arquiteto de Soluções & Engenheiro de Software"
+        },
+        "1": {
+          "period": "2018 - 2022",
+          "where": "Técnico em Redes e Sistemas, Autodidata e Cursos",
+          "position": "Desenvolvedor Full Stack & SysAdmin"
+        },
+        "2": {
+          "period": "2013 - 2018",
+          "where": "Experiencia Profissional e Estudos Autodidatas",
+          "position": "Técnico em Eletrónica e Programador"
+        }
       }
     }
   },

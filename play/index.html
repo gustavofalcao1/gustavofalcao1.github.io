@@ -24,6 +24,7 @@
         function({ addVariant }) {
           addVariant('lang-pt', '[lang="pt"] &')
           addVariant('lang-en', '[lang="en"] &')
+          addVariant('lang-mar', '[lang="mar"] &')
           addVariant('page-home', '[data-page="home"] &')
           addVariant('page-about', '[data-page="about"] &')
           addVariant('page-play', '[data-page="play"] &')
@@ -39,52 +40,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.11.0/css/flag-icons.min.css"/>
   <link rel="stylesheet" href="/styles.css">
   <style>
-    @keyframes glitch {
-      0% { transform: translate(0); text-shadow: none; }
-      20% { transform: translate(-2px, 2px); text-shadow: 2px 0 #2e9a40, -2px 0 #8957e5; }
-      40% { transform: translate(-2px, -2px); text-shadow: 4px 0 #2e9a40, -4px 0 #8957e5; }
-      60% { transform: translate(2px, 2px); text-shadow: -2px 0 #2e9a40, 2px 0 #8957e5; }
-      80% { transform: translate(2px, -2px); text-shadow: -4px 0 #2e9a40, 4px 0 #8957e5; }
-      100% { transform: translate(0); text-shadow: none; }
-    }
     
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    .matrix-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      pointer-events: none;
-      z-index: 0;
-      overflow: hidden;
-      opacity: 0.1;
-    }
-
-    .matrix-column {
-      position: absolute;
-      width: 20px;
-      font-family: monospace;
-      font-size: 14px;
-      text-align: center;
-      color: #2e9a40;
-      animation: matrix-fall linear infinite;
-      text-shadow: 0 0 2px #2e9a40;
-    }
-
-    @keyframes matrix-fall {
-      from { transform: translateY(-100%); }
-      to { transform: translateY(100vh); }
-    }
   </style>
 </head>
 <body class="bg-darker text-gray-100 min-h-screen flex flex-col overflow-hidden" data-page="play">
@@ -126,6 +82,10 @@
               <button onclick="i18n.setLanguage('en')" class="flex items-center gap-3 px-4 py-2 text-sm lang-en:text-primary text-light hover:text-primary hover:bg-darker/50 hover:rounded-lg w-full">
                 <span class="fi fi-gb"></span>
                 English
+              </button>
+              <button onclick="i18n.setLanguage('mar')" class="flex items-center gap-3 px-4 py-2 text-sm text-light hover:text-primary hover:bg-darker/50 hover:rounded-lg w-full">
+                <span class="text-green-500">👽</span>
+                Martian
               </button>
             </div>
           </div>
@@ -191,6 +151,10 @@
         <button onclick="i18n.setLanguage('en')" class="flex items-center gap-3 lang-en:text-primary text-light hover:text-primary">
           <span class="fi fi-gb"></span>
           English
+        </button>
+        <button onclick="i18n.setLanguage('mar')" class="flex items-center gap-3 text-light hover:text-primary">
+          <span class="text-green-500">👽</span>
+          Martian
         </button>
       </div>
     </div>

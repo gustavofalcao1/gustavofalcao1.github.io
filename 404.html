@@ -24,6 +24,7 @@
         function({ addVariant }) {
           addVariant('lang-pt', '[lang="pt"] &')
           addVariant('lang-en', '[lang="en"] &')
+          addVariant('lang-mar', '[lang="mar"] &')
           addVariant('page-home', '[data-page="home"] &')
           addVariant('page-about', '[data-page="about"] &')
           addVariant('page-play', '[data-page="play"] &')
@@ -127,6 +128,10 @@
                 <span class="fi fi-gb"></span>
                 English
               </button>
+              <button onclick="i18n.setLanguage('mar')" class="flex items-center gap-3 px-4 py-2 text-sm text-light hover:text-primary hover:bg-darker/50 hover:rounded-lg w-full">
+                <span class="text-green-500">👽</span>
+                Martian
+              </button>
             </div>
           </div>
         </div>
@@ -191,6 +196,10 @@
         <button onclick="i18n.setLanguage('en')" class="flex items-center gap-3 lang-en:text-primary text-light hover:text-primary">
           <span class="fi fi-gb"></span>
           English
+        </button>
+        <button onclick="i18n.setLanguage('mar')" class="flex items-center gap-3 text-light hover:text-primary">
+          <span class="text-green-500">👽</span>
+          Martian
         </button>
       </div>
     </div>

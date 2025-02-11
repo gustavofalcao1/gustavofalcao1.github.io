@@ -190,3 +190,51 @@
     transform: translateY(100vh);
   }
 }
+
+/* Matrix effect */
+@keyframes glitch {
+  0% { transform: translate(0); text-shadow: none; }
+  20% { transform: translate(-2px, 2px); text-shadow: 2px 0 #2e9a40, -2px 0 #8957e5; }
+  40% { transform: translate(-2px, -2px); text-shadow: 4px 0 #2e9a40, -4px 0 #8957e5; }
+  60% { transform: translate(2px, 2px); text-shadow: -2px 0 #2e9a40, 2px 0 #8957e5; }
+  80% { transform: translate(2px, -2px); text-shadow: -4px 0 #2e9a40, 4px 0 #8957e5; }
+  100% { transform: translate(0); text-shadow: none; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.matrix-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  opacity: 0.1;
+}
+
+.matrix-column {
+  position: absolute;
+  width: 20px;
+  font-family: monospace;
+  font-size: 14px;
+  text-align: center;
+  color: #2e9a40;
+  animation: matrix-fall linear infinite;
+  text-shadow: 0 0 2px #2e9a40;
+}
+
+@keyframes matrix-fall {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(100vh); }
+}

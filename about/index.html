@@ -29,6 +29,7 @@
         function({ addVariant }) {
           addVariant('lang-pt', '[lang="pt"] &')
           addVariant('lang-en', '[lang="en"] &')
+          addVariant('lang-mar', '[lang="mar"] &')
           addVariant('page-home', '[data-page="home"] &')
           addVariant('page-about', '[data-page="about"] &')
           addVariant('page-play', '[data-page="play"] &')
@@ -92,6 +93,10 @@
               <button onclick="i18n.setLanguage('en')" class="flex items-center gap-3 px-4 py-2 text-sm lang-en:text-primary text-light hover:text-primary hover:bg-darker/50 hover:rounded-lg w-full">
                 <span class="fi fi-gb"></span>
                 English
+              </button>
+              <button onclick="i18n.setLanguage('mar')" class="flex items-center gap-3 px-4 py-2 text-sm text-light hover:text-primary hover:bg-darker/50 hover:rounded-lg w-full">
+                <span class="text-green-500">👽</span>
+                Martian
               </button>
             </div>
           </div>
@@ -158,6 +163,10 @@
           <span class="fi fi-gb"></span>
           English
         </button>
+        <button onclick="i18n.setLanguage('mar')" class="flex items-center gap-3 text-light hover:text-primary">
+          <span class="text-green-500">👽</span>
+          Martian
+        </button>
       </div>
     </div>
   </header>
@@ -185,14 +194,14 @@
         <div class="w-full mb-12">
           <h2 class="text-2xl md:text-3xl font-bold mb-6 text-light flex items-center gap-3">
             <span class="h-px flex-grow bg-gradient-to-r from-primary/50 to-transparent"></span>
-            <span data-i18n="about.sections.expertise"></span>
+            <span data-i18n="about.sections.expertise.title"></span>
             <span class="h-px flex-grow bg-gradient-to-l from-primary/50 to-transparent"></span>
           </h2>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Systems & DevOps Card -->
             <div class="group p-6 rounded-2xl bg-dark/30 backdrop-blur-md border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1">
-              <h3 class="text-xl font-medium mb-4 text-primary group-hover:text-secondary transition-colors" data-i18n="about.categories.systems"></h3>
+              <h3 class="text-xl font-medium mb-4 text-primary group-hover:text-secondary transition-colors" data-i18n="about.sections.expertise.categories.systems.title"></h3>
               <ul class="space-y-3" id="systems-list">
                 <!-- Items will be populated via JS -->
               </ul>
@@ -200,7 +209,7 @@
 
             <!-- Development Card -->
             <div class="group p-6 rounded-2xl bg-dark/30 backdrop-blur-md border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1">
-              <h3 class="text-xl font-medium mb-4 text-primary group-hover:text-secondary transition-colors" data-i18n="about.categories.development"></h3>
+              <h3 class="text-xl font-medium mb-4 text-primary group-hover:text-secondary transition-colors" data-i18n="about.sections.expertise.categories.development.title"></h3>
               <ul class="space-y-3" id="development-list">
                 <!-- Items will be populated via JS -->
               </ul>
@@ -208,7 +217,7 @@
 
             <!-- Architecture Card -->
             <div class="group p-6 rounded-2xl bg-dark/30 backdrop-blur-md border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1">
-              <h3 class="text-xl font-medium mb-4 text-primary group-hover:text-secondary transition-colors" data-i18n="about.categories.architecture"></h3>
+              <h3 class="text-xl font-medium mb-4 text-primary group-hover:text-secondary transition-colors" data-i18n="about.sections.expertise.categories.architecture.title"></h3>
               <ul class="space-y-3" id="architecture-list">
                 <!-- Items will be populated via JS -->
               </ul>
@@ -220,41 +229,38 @@
         <div class="w-full">
           <h2 class="text-2xl md:text-3xl font-bold mb-6 text-light flex items-center gap-3">
             <span class="h-px flex-grow bg-gradient-to-r from-primary/50 to-transparent"></span>
-            <span data-i18n="about.sections.evolution"></span>
+            <span data-i18n="about.sections.evolution.title"></span>
             <span class="h-px flex-grow bg-gradient-to-l from-primary/50 to-transparent"></span>
           </h2>
           <!-- 00 -->
           <div class="relative pl-8 border-l-2 border-primary/30">
             <div class="absolute w-4 h-4 -left-[9px] bottom-[65%] animate-pulse">
-              <div class="w-full h-full bg-gradient-to-r from-primary to-secondary"
-                   style="clip-path: polygon(50% 0%, 0% 100%, 100% 100%)">
+              <div class="w-full h-full bg-gradient-to-r from-primary to-secondary" style="clip-path: polygon(50% 0%, 0% 100%, 100% 100%)">
               </div>
             </div>
-            <h3 class="text-xl font-medium text-primary" data-i18n="about.evolution.0.position"></h3>
-            <p class="text-light/80" data-i18n="about.evolution.0.period"></p>
-            <p class="text-light/80" data-i18n="about.evolution.0.where"></p>
+            <h3 class="text-xl font-medium text-primary" data-i18n="about.sections.evolution.0.position"></h3>
+            <p class="text-light/80" data-i18n="about.sections.evolution.0.period"></p>
+            <p class="text-light/80" data-i18n="about.sections.evolution.0.where"></p>
           </div>
           <!-- 01 -->
           <div class="relative mt-6 pl-8 border-l-2 border-primary/30">
              <div class="absolute w-4 h-4 -left-[9px] bottom-[50%] animate-pulse">
-              <div class="w-full h-full bg-gradient-to-r from-primary to-secondary"
-                   style="clip-path: polygon(50% 0%, 0% 100%, 100% 100%)">
+              <div class="w-full h-full bg-gradient-to-r from-primary to-secondary" style="clip-path: polygon(50% 0%, 0% 100%, 100% 100%)">
               </div>
             </div>
-            <h3 class="text-xl font-medium text-primary" data-i18n="about.evolution.1.position"></h3>
-            <p class="text-light/80" data-i18n="about.evolution.1.period"></p>
-            <p class="text-light/80" data-i18n="about.evolution.1.where"></p>
+            <h3 class="text-xl font-medium text-primary" data-i18n="about.sections.evolution.1.position"></h3>
+            <p class="text-light/80" data-i18n="about.sections.evolution.1.period"></p>
+            <p class="text-light/80" data-i18n="about.sections.evolution.1.where"></p>
           </div>
           <!-- 02 -->
           <div class="relative mt-6 pl-8 border-l-2 border-primary/30">
              <div class="absolute w-4 h-4 -left-[9px] bottom-[20%] animate-pulse">
-              <div class="w-full h-full bg-gradient-to-r from-primary to-secondary"
-                   style="clip-path: polygon(50% 0%, 0% 100%, 100% 100%)">
+              <div class="w-full h-full bg-gradient-to-r from-primary to-secondary" style="clip-path: polygon(50% 0%, 0% 100%, 100% 100%)">
               </div>
             </div>
-            <h3 class="text-xl font-medium text-primary" data-i18n="about.evolution.2.position"></h3>
-            <p class="text-light/80" data-i18n="about.evolution.2.period"></p>
-            <p class="text-light/80" data-i18n="about.evolution.2.where"></p>
+            <h3 class="text-xl font-medium text-primary" data-i18n="about.sections.evolution.2.position"></h3>
+            <p class="text-light/80" data-i18n="about.sections.evolution.2.period"></p>
+            <p class="text-light/80" data-i18n="about.sections.evolution.2.where"></p>
           </div>
         </div>
       </div>

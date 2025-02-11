@@ -4,30 +4,45 @@ Modern and responsive personal portfolio website, built with HTML, JavaScript an
 
 ## ✨ Features
 
-- 🌐 Internationalization system (i18n) with support for PT-BR and EN
-- 📱 Fully responsive design
-- 🎨 Modern interface with:
-  - Glassmorphism effects
-  - Smooth gradients
-  - Entry animations
-- 💼 Dynamic projects section
-- 🛠️ Technology stack display with icons
-- 🌓 Optimized dark theme
-- 🔄 Smooth transitions between elements
+- 🌐 Advanced Internationalization (i18n):
+  - 🇧🇷 Portuguese (PT-BR)
+  - 🇬🇧 English (EN)
+  - 👽 Martian (MAR) - For the fun!
+- 🎨 Visual Effects:
+  - Glassmorphism UI
+  - Gradient animations
+  - Smooth transitions
+  - Dynamic hover effects
+  - Matrix background effects
+  - Responsive layouts
+- 📱 Responsive Design:
+  - Mobile-first approach
+  - Tablet optimization
+  - Desktop enhancement
+- 🛠️ Dynamic Content:
+  - Project showcase
+  - Skills visualization
+  - Experience timeline
+  - Language selection
+- 🎯 Performance:
+  - Optimized assets
+  - Lazy loading
+  - Smooth animations
+  - Clean code structure
 
-## 🛠️ Technologies Used
+## 🔧 Technical Stack
 
-- HTML5
+- HTML5 & CSS3
 - JavaScript (ES6+)
 - TailwindCSS
-- DevIcon
+- Devicon
 - HeroIcons
 - Flag Icons
 
 ## 📁 Project Structure
 
 ```
-portfolio/
+(root)/
 ├── assets/
 │   └── img/           # Images and visual resources
 ├── data/
