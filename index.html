@@ -29,6 +29,7 @@
         function({ addVariant }) {
           addVariant('lang-pt', '[lang="pt"] &')
           addVariant('lang-en', '[lang="en"] &')
+          addVariant('lang-mar', '[lang="mar"] &')
           addVariant('page-home', '[data-page="home"] &')
           addVariant('page-about', '[data-page="about"] &')
           addVariant('page-play', '[data-page="play"] &')
@@ -52,7 +53,7 @@
     <nav class="flex items-center gap-4 lg:gap-6">
       <!-- Logo -->
       <a href="/" class="flex-shrink-0">
-        <img src="assets/img/logo.jpeg" width="32px" alt="Logo" class="rounded-full">
+        <img src="assets/img/logo.webp" width="32px" alt="Logo" class="rounded-full">
       </a>
       <div class="hidden md:flex items-center gap-4 lg:gap-6" id="main-menu">
         <div class="w-px h-4 bg-light/10 hidden md:block"></div>
@@ -86,6 +87,10 @@
                 <span class="fi fi-gb"></span>
                 English
               </button>
+              <button onclick="i18n.setLanguage('mar')" class="flex items-center gap-3 px-4 py-2 text-sm lang-mar:text-primary text-light hover:text-primary hover:bg-darker/50 hover:rounded-lg w-full">
+                <span class="text-green-500">👽</span>
+                Martian
+              </button>
             </div>
           </div>
         </div>
@@ -97,7 +102,7 @@
     <nav class="flex items-center justify-between max-w-lg mx-auto px-6">
       <!-- Home -->
       <a href="/" class="text-light">
-        <img src="assets/img/logo.jpeg" width="32px" alt="Logo" class="rounded-full">
+        <img src="assets/img/logo.webp" width="32px" alt="Logo" class="rounded-full">
       </a>
 
       <!-- Menu Button -->
@@ -149,6 +154,10 @@
           <span class="fi fi-gb"></span>
           English
         </button>
+        <button onclick="i18n.setLanguage('mar')" class="flex items-center gap-3 lang-mar:text-primary text-light hover:text-primary">
+          <span class="text-green-500">👽</span>
+          Martian
+        </button>
       </div>
     </div>
   </header>
@@ -170,7 +179,7 @@
         <div class="absolute inset-0 bg-gradient-to-t from-darker to-transparent z-10"></div>
         <div class="w-full h-[300px] md:w-[400px] md:h-[400px] lg:w-[550px] md:h-[550px] relative overflow-hidden">
           <img 
-            src="assets/img/me_banner.jpg" 
+            src="assets/img/me_banner.webp" 
             alt="Banner" 
             class="w-full h-full object-cover scale-x-[-1] clip-banner"
           >
