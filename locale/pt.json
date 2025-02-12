@@ -112,7 +112,7 @@
           },
           "architecture": {
             "title": "Arquitetura",
-            "skills": [
+            "items": [
               "Sistemas Distribuídos",
               "Soluções Escaláveis",
               "Otimização de Performance",
