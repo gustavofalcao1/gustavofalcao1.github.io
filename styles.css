@@ -85,36 +85,9 @@
   }
 }
 
-/* Atualizar as media queries para desktop header */
-@media (min-width: 1024px) {
-  #desktop-header {
-    width: max-content;
-    max-width: calc(100vw - 3rem);
-  }
-  
-  #desktop-header nav {
-    gap: 1.5rem;
-  }
-}
-
-/* Ajustar o layout para tablets */
-@media (max-width: 1023px) {
-  main {
-    padding-bottom: 5rem;
-  }
-  
-  #mobile-header {
-    display: block;
-  }
-  
-  #desktop-header {
-    display: none;
-  }
-}
-
 /* Mobile menu styles */
 #mobile-header,
-#mobile-menu-dropdown-box,
+#mobile-menu-dropdown,
 #mobile-lang-dropdown {
   box-shadow: 0 -4px 6px -1px rgb(0 0 0 / 0.1);
 }
@@ -157,84 +130,25 @@
   }
 }
 
-/* Matrix Effect */
-.matrix-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-  opacity: 0.2;
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
 }
 
-.matrix-column {
-  position: absolute;
-  width: 10px;
-  font-family: monospace;
-  font-size: 10px;
-  text-align: center;
-  color: #2e9a40;
-  transform: translateY(-100%);
-  animation: matrix-fall linear infinite;
-  text-shadow: 0 0 3px #2e9a40;
+::-webkit-scrollbar-track {
+  background: transparent;
 }
 
-@keyframes matrix-fall {
-  from {
-    transform: translateY(-100%);
-  }
-  to {
-    transform: translateY(100vh);
-  }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #2e9a4041, #8957e541);
+  border-radius: 3px;
 }
 
-/* Matrix effect */
-@keyframes glitch {
-  0% { transform: translate(0); text-shadow: none; }
-  20% { transform: translate(-2px, 2px); text-shadow: 2px 0 #2e9a40, -2px 0 #8957e5; }
-  40% { transform: translate(-2px, -2px); text-shadow: 4px 0 #2e9a40, -4px 0 #8957e5; }
-  60% { transform: translate(2px, 2px); text-shadow: -2px 0 #2e9a40, 2px 0 #8957e5; }
-  80% { transform: translate(2px, -2px); text-shadow: -4px 0 #2e9a40, 4px 0 #8957e5; }
-  100% { transform: translate(0); text-shadow: none; }
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #2e9a40A1, #8957e5A1);
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-.matrix-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-  opacity: 0.1;
-}
-
-.matrix-column {
-  position: absolute;
-  width: 20px;
-  font-family: monospace;
-  font-size: 14px;
-  text-align: center;
-  color: #2e9a40;
-  animation: matrix-fall linear infinite;
-  text-shadow: 0 0 2px #2e9a40;
-}
-
-@keyframes matrix-fall {
-  from { transform: translateY(-100%); }
-  to { transform: translateY(100vh); }
+/* For modals and specific containers */
+.modal-content::-webkit-scrollbar {
+  display: none;
 }
