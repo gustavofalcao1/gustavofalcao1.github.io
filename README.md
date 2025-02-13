@@ -2,6 +2,8 @@
 
 Modern and responsive personal portfolio website, built with HTML, JavaScript and TailwindCSS.
 
+![Gustavo Falcão](screenshots/img-00.png)
+
 ## ✨ Features
 
 - 🌐 Advanced Internationalization (i18n):
