@@ -82,7 +82,7 @@ function createProjectModal(project) {
       <div class="absolute inset-0 bg-darker/80 backdrop-blur-sm" onclick="closeProjectModal('${project.id}')"></div>
       
       <!-- Modal -->
-      <div class="relative w-full max-w-4xl mx-auto max-h-[90vh] bg-dark/95 rounded-2xl border border-primary/20 shadow-xl backdrop-blur-md">
+      <div class="relative w-full max-w-4xl mx-auto max-h-[94vh] bg-dark/95 rounded-2xl border border-primary/20 shadow-xl backdrop-blur-md">
         <!-- Close button -->
         <button class="absolute top-2 right-2 text-light/60 hover:text-primary transition-colors z-10"  onclick="closeProjectModal('${project.id}')">
           <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -149,7 +149,7 @@ function createProjectModal(project) {
 function createProjectCard(project) {
   const techStack = project.technologies
     .map(tech => `
-      <div class="tooltip cursor-default" title="${tech}">
+      <div class="tooltip" title="${tech}">
         ${techIcons[tech] || tech}
       </div>
     `).join('');

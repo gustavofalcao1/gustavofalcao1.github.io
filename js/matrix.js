@@ -2,8 +2,10 @@ class MatrixEffect {
   constructor() {
     this.container = document.getElementById('matrix-bg');
     this.activeColumns = 0;
-    this.maxColumns = 120;
+    this.maxColumns = Math.floor(window.innerWidth / 20); // Dynamic column count based on screen width
     this.characters = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+    this.fps = 30;
+    this.lastFrame = 0;
     this.init();
   }
 
@@ -13,13 +15,14 @@ class MatrixEffect {
     const column = document.createElement('div');
     column.className = 'matrix-column';
     column.style.left = (Math.random() * window.innerWidth) + 'px';
-    column.style.animationDuration = (Math.random() * 3 + 4) + 's';
+    column.style.animationDuration = (Math.random() * 2 + 3) + 's'; // Faster animation
+    column.style.opacity = Math.random() * 0.5 + 0.5; // Random opacity
     
-    let content = '';
-    const length = 25 + Math.floor(Math.random() * 35);
-    for (let j = 0; j < length; j++) {
-      content += this.characters[Math.floor(Math.random() * this.characters.length)];
-    }
+    const length = 15 + Math.floor(Math.random() * 25); // Shorter columns
+    const content = Array(length)
+      .fill()
+      .map(() => this.characters[Math.floor(Math.random() * this.characters.length)])
+      .join('');
     
     column.textContent = content;
     this.container.appendChild(column);
@@ -28,44 +31,51 @@ class MatrixEffect {
     column.addEventListener('animationend', () => {
       column.remove();
       this.activeColumns--;
+      if (Math.random() < 0.8) this.createColumn(); // 80% chance to create new column
     });
   }
 
   init() {
     if (!this.container) return;
-
-    // Criar colunas iniciais
-    let delay = 0;
-    for (let i = 0; i < 40; i++) {
-      setTimeout(() => this.createColumn(), delay);
-      delay += 50;
+    
+    // Initial columns with staggered delay
+    const initialColumns = Math.min(30, this.maxColumns);
+    for (let i = 0; i < initialColumns; i++) {
+      setTimeout(() => this.createColumn(), i * 100);
     }
 
-    // Adicionar novas colunas periodicamente
-    setInterval(() => {
-      if (Math.random() < 0.5) {
-        this.createColumn();
+    // Continuous column creation with frame limiting
+    const animate = (timestamp) => {
+      if (timestamp - this.lastFrame > 1000 / this.fps) {
+        if (Math.random() < 0.2) this.createColumn(); // 20% chance per frame
+        this.lastFrame = timestamp;
       }
-    }, 300);
+      requestAnimationFrame(animate);
+    };
+    requestAnimationFrame(animate);
   }
 
   reset() {
     if (!this.container) return;
     this.container.innerHTML = '';
     this.activeColumns = 0;
+    this.maxColumns = Math.floor(window.innerWidth / 20);
     this.init();
   }
 }
 
-// Inicialização global
+// Initialize with debounced resize handler
 let matrixEffect;
-let resizeTimeout;
+const debounce = (fn, delay) => {
+  let timeoutId;
+  return (...args) => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => fn(...args), delay);
+  };
+};
 
 document.addEventListener('DOMContentLoaded', () => {
   matrixEffect = new MatrixEffect();
   
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => matrixEffect.reset(), 250);
-  });
+  window.addEventListener('resize', debounce(() => matrixEffect.reset(), 250));
 });
