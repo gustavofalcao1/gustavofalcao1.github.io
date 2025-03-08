@@ -1,6 +1,6 @@
 # 🚀 Portfolio - Gustavo Falcão
 
-Modern and responsive personal portfolio website, built with HTML, JavaScript and TailwindCSS.
+Modern and responsive personal portfolio website, built with HTML, JavaScript and CSS.
 
 ![Gustavo Falcão](screenshots/img-00.png)
 
@@ -12,10 +12,9 @@ Modern and responsive personal portfolio website, built with HTML, JavaScript an
   - 👽 Martian (MAR) - For the fun!
 - 🎨 Visual Effects:
   - Glassmorphism UI
-  - Gradient animations
+  - Matrix background effects
   - Smooth transitions
   - Dynamic hover effects
-  - Matrix background effects
   - Responsive layouts
 - 📱 Responsive Design:
   - Mobile-first approach
@@ -23,39 +22,44 @@ Modern and responsive personal portfolio website, built with HTML, JavaScript an
   - Desktop enhancement
 - 🛠️ Dynamic Content:
   - Project showcase
-  - Skills visualization
-  - Experience timeline
+  - Interactive sections
   - Language selection
+  - Play section
 - 🎯 Performance:
-  - Optimized assets
-  - Lazy loading
-  - Smooth animations
+  - Optimized assets (WebP images)
+  - Progressive loading
   - Clean code structure
 
 ## 🔧 Technical Stack
 
 - HTML5 & CSS3
-- JavaScript (ES6+)
-- TailwindCSS
-- Devicon
-- HeroIcons
-- Flag Icons
+- Vanilla JavaScript (ES6+)
+- JSON for data management
+- Custom animations
 
 ## 📁 Project Structure
 
 ```
 (root)/
 ├── assets/
-│   └── img/           # Images and visual resources
+│   └── img/           # Images and visual resources including project works
+├── css/
+│   ├── matrix.css     # Matrix animation styles
+│   └── styles.css     # Main stylesheet
+├── js/
+│   ├── about.js       # About page functionality
+│   ├── i18n.js        # Internationalization system
+│   ├── main.js        # Core application logic
+│   ├── matrix.js      # Matrix animation logic
+│   └── works.js       # Project rendering logic
 ├── data/
 │   └── works.json     # Project data
-├── js/
-│   ├── i18n.js       # Internationalization system
-│   └── works.js      # Project rendering logic
 ├── locale/
-│   ├── en.json       # English translations
-│   └── pt.json       # Portuguese translations
-└── styles.css        # Custom styles
+│   ├── en.json        # English translations
+│   ├── pt.json        # Portuguese translations
+│   └── mar.json       # Martian translations
+├── about/             # About page
+└── play/              # Interactive playground section
 ```
 
 ## 🚀 How to Run
@@ -65,7 +69,11 @@ Modern and responsive personal portfolio website, built with HTML, JavaScript an
 git clone https://github.com/gustavofalcao1/gustavofalcao1.github.io.git
 ```
 
-2. Open the `index.html` file in your browser
+2. Open the `index.html` file in your browser or use a local server:
+```bash
+# Using Python to create a simple HTTP server
+python -m http.server
+```
 
 ## ⚠️ Copyright
 
