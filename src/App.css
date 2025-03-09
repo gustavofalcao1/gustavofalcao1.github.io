@@ -271,32 +271,37 @@
   box-shadow: 0 0 0 2px rgba(46, 154, 64, 0.2);
 }
 
-/* Ajustes para o chat em mobile */
-@media (max-width: 640px) {
+/* Ajustes específicos para mobile */
+@media (max-width: 767px) {
+  /* Container do chat */
   .expandable-chat-container {
-    margin-bottom: 0; /* Removendo margem inferior */
+    margin-bottom: 70px; /* Espaço embaixo para o header mobile */
   }
   
-  /* Ajuste para o botão do chat em mobile */
+  /* Botão do chat em mobile */
   .expandable-chat-container .chat-button {
     position: fixed;
     bottom: 100px; /* Posição acima do header mobile */
-    right: 12px;
-    z-index: -1;
+    right: 20px;
+    transition: all 0.3s ease;
+    z-index: 60;
   }
   
-  /* Estilo para melhorar a visualização do chat em mobile */
+  /* Quando o chat está aberto, o botão vai para trás do componente */
+  .chat-is-open .chat-button {
+    z-index: 49; /* Valor menor que o container (50) */
+    opacity: 0; /* Opcional: torna completamente invisível */
+    transform: scale(0.8); /* Opcional: efeito de diminuir */
+  }
+  
+  /* Corpo do chat em mobile - ajuste de altura */
   .expandable-chat-body {
-    height: calc(100% - 130px); /* Altura ajustada para caber cabeçalho e rodapé */
-    max-height: none;
+    height: calc(100% - 155px); /* Altura ajustada para caber cabeçalho, rodapé e espaço inferior */
   }
   
-  /* Ajuste para melhorar a visualização do footer em mobile */
-  .expandable-chat-footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding-bottom: 12px; /* Espaço extra no padding inferior */
+  /* Em mobile deixamos espaço em baixo do chat */
+  .expandable-chat-container > div:first-child {
+    bottom: 80px !important; /* Espaço embaixo fixo */
+    height: calc(100% - 80px) !important; /* Altura ajustada */
   }
 }

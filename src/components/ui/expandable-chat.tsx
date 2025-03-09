@@ -76,15 +76,17 @@ const ExpandableChat: React.FC<ExpandableChatProps> = ({
 
   return (
     <div
-      className={cn(`fixed ${chatConfig.positions[position]} z-50`, className)}
+      className={cn(
+        `fixed ${chatConfig.positions[position]} z-50`, 
+        isOpen ? "chat-is-open" : "",
+        className
+      )}
       {...props}
     >
       <div
         ref={chatRef}
         className={cn(
-          "flex flex-col bg-dark/95 backdrop-blur-md border border-primary/20 sm:rounded-lg shadow-md overflow-hidden transition-all duration-300 ease-out sm:absolute sm:w-[90vw] sm:h-[80vh]",
-          // Modificando o estilo mobile para ocupar apenas parte da tela, de cima para baixo
-          "fixed inset-x-0 top-0 bottom-[5.5rem] rounded-b-lg", // Ajuste para deixar espaço na parte inferior
+          "flex flex-col bg-dark/95 backdrop-blur-md border border-primary/20 sm:rounded-lg shadow-md overflow-hidden transition-all duration-300 ease-out sm:absolute sm:w-[90vw] sm:h-[80vh] fixed inset-0 w-full h-full sm:inset-auto",
           chatConfig.chatPositions[position],
           chatConfig.dimensions[size],
           isOpen ? chatConfig.states.open : chatConfig.states.closed,
