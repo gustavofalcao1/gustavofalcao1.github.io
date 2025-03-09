@@ -1,46 +1,89 @@
-# Getting Started with Create React App
+# 🚀 Portfolio - Gustavo Falcão
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Modern and responsive personal portfolio website, built with HTML, JavaScript and CSS.
 
-## Available Scripts
+![Gustavo Falcão](screenshots/img-00.png)
 
-In the project directory, you can run:
+## ✨ Features
 
-### `yarn start`
+- 🌐 Advanced Internationalization (i18n):
+  - 🇧🇷 Portuguese (PT-BR)
+  - 🇬🇧 English (EN)
+  - 👽 Martian (MAR) - For the fun!
+- 🎨 Visual Effects:
+  - Glassmorphism UI
+  - Matrix background effects
+  - Smooth transitions
+  - Dynamic hover effects
+  - Responsive layouts
+- 📱 Responsive Design:
+  - Mobile-first approach
+  - Tablet optimization
+  - Desktop enhancement
+- 🛠️ Dynamic Content:
+  - Project showcase
+  - Interactive sections
+  - Language selection
+  - Play section
+- 🎯 Performance:
+  - Optimized assets (WebP images)
+  - Progressive loading
+  - Clean code structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 🔧 Technical Stack
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- HTML5 & CSS3
+- Vanilla JavaScript (ES6+)
+- JSON for data management
+- Custom animations
 
-### `yarn test`
+## 📁 Project Structure
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+(root)/
+├── assets/
+│   └── img/           # Images and visual resources including project works
+├── css/
+│   ├── matrix.css     # Matrix animation styles
+│   └── styles.css     # Main stylesheet
+├── js/
+│   ├── about.js       # About page functionality
+│   ├── i18n.js        # Internationalization system
+│   ├── main.js        # Core application logic
+│   ├── matrix.js      # Matrix animation logic
+│   └── works.js       # Project rendering logic
+├── data/
+│   └── works.json     # Project data
+├── locale/
+│   ├── en.json        # English translations
+│   ├── pt.json        # Portuguese translations
+│   └── mar.json       # Martian translations
+├── about/             # About page
+└── play/              # Interactive playground section
+```
 
-### `yarn build`
+## 🚀 How to Run
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
+```bash
+git clone https://github.com/gustavofalcao1/gustavofalcao1.github.io.git
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Open the `index.html` file in your browser or use a local server:
+```bash
+# Using Python to create a simple HTTP server
+python -m http.server
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## ⚠️ Copyright
 
-### `yarn eject`
+This is a personal portfolio. All rights reserved. The code and content of this project are the exclusive property of Gustavo Falcão.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 📫 Contact
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- LinkedIn: [Gustavo Falcão](https://www.linkedin.com/in/gustavofalcao1)
+- GitHub: [@gustavofalcao1](https://github.com/gustavofalcao1)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 📝 License
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project is under the MIT license. See the [LICENSE](LICENSE) file for more details.

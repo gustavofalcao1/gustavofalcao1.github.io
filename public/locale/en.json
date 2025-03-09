@@ -1,0 +1,151 @@
+{
+  "config": {
+    "lang": "en",
+    "langName": "English",
+    "langCode": "EN",
+    "loading": "Loading..."
+  },
+  "title": "Software Engineer",
+  "name": "Gustavo Falcão",
+  "hi": "Hey, there 👋",
+  "im": "I'm",
+  "description": "I turn problems into solutions, complexity into efficiency, and coffee into scalable code ☕💻🚀",
+  "pageTitle": "Gustavo Falcão - Software Engineer",
+  "metaDescription": "Gustavo Falcão's personal website. Software Engineer, Full Stack Developer, and Open Source enthusiast.",
+  "metaKeywords": "software engineer, developer, portfolio",
+  "menu": {
+    "home": "Works",
+    "about": "About",
+    "play": "Playground",
+    "contact": "Contact"
+  },
+  "404": {
+    "pageTitle": "404 - Page Not Found",
+    "title": "You found the limit of this matrix!",
+    "heading": "404",
+    "error": "Oops! Looks like you found a bug.",
+    "description": "The page you're looking for was abducted by aliens... 👽",
+    "button": "Back to Home"
+  },
+  "home": {
+    "title": "Works"
+  },
+  "projects": {
+    "btn": "View project",
+    "project1": {
+      "title": "Cluey-App",
+      "description": "Social network mobile app with AI focused on collaborative work, task organization and productivity."
+    },
+    "project2": {
+      "title": "Cluey-Web",
+      "description": "Social network web app with AI focused on collaborative work, task organization and productivity."
+    },
+    "project3": {
+      "title": "GeekSmart",
+      "description": "An employee and inventory manager, simple, light and safe."
+    },
+    "project4": {
+      "title": "Tasks",
+      "description": "APP Mobile Task Management Productive, focusing on minimalism and optimization."
+    },
+    "project5": {
+      "title": "WebSchool",
+      "description": "School management platform with room control, users, stock and requests."
+    },
+    "project6": {
+      "title": "Starfield Language Tools",
+      "description": "Since Bethesda Game Studios didn't put a simple option to change the Starfield game's language, I created this simple application to do it for them."
+    },
+    "project7": {
+      "title": "NodeDO",
+      "description": "Node task manager, with well -structured and light, objective database is to be simple and efficient with pure node."
+    },
+    "project8": {
+      "title": "AiChat CLI",
+      "description": "A command chat, context and customization options and a method of copying the results to the transfer area without the system's graphical interface."
+    },
+    "project9": {
+      "title": "Project Name 9",
+      "description": "Detailed description of project 9"
+    },
+    "project10": {
+      "title": "Project Name 10",
+      "description": "Detailed description of project 10"
+    }
+  },
+  "about": {
+    "pageTitle": "Gustavo Falcão - Who am I?",
+    "metaDescription": "Learn more about Gustavo Falcão, Solutions Architect and Software Engineer.",
+    "title": "Who am I?",
+    "bio1": "I'm Gustavo Falcão, I'm a Solutions Architect and Software Engineer with over a decade of technology experience. My journey began in electronics, evolved to web development and Linux automation, and culminated in my Computer Engineering degree.",
+    "bio2": "This multidisciplinary path gives me a unique view of development, combining practical electronics knowledge, advanced operating systems mastery, and software development expertise.",
+    "sections": {
+      "expertise": {
+        "title": "Skills",
+        "categories": {
+          "systems": {
+            "title": "Systems & DevOps",
+            "items": [
+              "Linux (Debian, Arch, Fedora)",
+              "Windows Server & Desktop",
+              "macOS",
+              "Shell Scripting (Bash, PowerShell)",
+              "Docker & Kubernetes",
+              "CI/CD Pipelines",
+              "Cloud (AWS, GCP)",
+              "CLI Development",
+              "System Automation"
+            ]
+          },
+          "development": {
+            "title": "Development",
+            "items": [
+              "Full Stack Development",
+              "Node.js & TypeScript",
+              "React & Next.js",
+              "APIs RESTful",
+              "Python (CLI, API, AI)",
+              "System Integration",
+              "Cross-Platform Development",
+              "Clean Code & Best Practices"
+            ]
+          },
+          "architecture": {
+            "title": "Architecture",
+            "items": [
+              "Distributed Systems",
+              "Scalable Solutions",
+              "Performance Optimization",
+              "APIS and Systems Design",
+              "Database Design",
+              "Cloud Architecture",
+              "Microservices Architecture",
+              "Security Systems"
+            ]
+          }
+        }
+      },
+      "evolution": {
+        "title": "Evolution",
+        "0": {
+          "period": "2022 - Present",
+          "where": "Degree in Computer Engineering and Training",
+          "position": "Solutions Architect & Software Engineer"
+        },
+        "1": {
+          "period": "2018 - 2022",
+          "where": "Professional Experience, Self-Study and Courses",
+          "position": "Full Stack Developer & SysAdmin"
+        },
+        "2": {
+          "period": "2013 - 2018",
+          "where": "Professional Experience and Self-Study",
+          "position": "Electronics Technician & Programmer"
+        }
+      }
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved"
+  }
+}
