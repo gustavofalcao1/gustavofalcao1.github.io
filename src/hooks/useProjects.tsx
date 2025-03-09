@@ -96,8 +96,8 @@ export const useProjects = () => {
         const data = await response.json();
         setProjects(data.projects);
       } catch (err) {
-        console.error('Error loading projects:', err);
         setError(err instanceof Error ? err : new Error('Failed to load projects'));
+        setLoading(false);
       } finally {
         setLoading(false);
       }

@@ -111,7 +111,8 @@ export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({ children
         localStorage.setItem(LANGUAGE_STORAGE_KEY, lang);
         
       } catch (error) {
-        console.error('Translation loading error:', error);
+        setIsLoading(false);
+        return '';
       } finally {
         setIsLoading(false);
       }
