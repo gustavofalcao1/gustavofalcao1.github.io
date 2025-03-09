@@ -1,11 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useI18n } from '../hooks/useI18n';
+import { ContactContext } from '../App';
 
+// Mobile header component
 const MobileHeader: React.FC = () => {
-  const { setLang } = useI18n();
+  const { t, setLang, isLoading } = useI18n();
   const [menuOpen, setMenuOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
+  const { setShowChat } = useContext(ContactContext);
+
+  if (isLoading) return null;
 
   // Toggle menu visibility
   const toggleMenu = () => {
@@ -16,6 +21,13 @@ const MobileHeader: React.FC = () => {
   // Toggle language menu visibility
   const toggleLang = () => {
     setLangOpen(!langOpen);
+    if (menuOpen) setMenuOpen(false);
+  };
+
+  // Handle contact click
+  const handleContactClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setShowChat(true);
     if (menuOpen) setMenuOpen(false);
   };
 
@@ -75,38 +87,36 @@ const MobileHeader: React.FC = () => {
         <nav className="flex flex-col gap-6 p-6 max-w-lg mx-auto">
           <NavLink 
             to="/" 
-            className="flex items-center gap-1 page-home:text-primary text-light hover:text-primary group transition-colors"
+            className="flex items-center gap-3 px-4 py-2 page-home:text-primary text-light hover:text-primary hover:bg-darker/50 hover:rounded-lg group transition-colors"
             onClick={() => setMenuOpen(false)}
           >
-            <span className="font-medium text-xl" data-i18n="menu.home">Works</span>
-            <div className="inline-flex items-center justify-center ml-1.5 border border-light page-home:border-primary group-hover:border-primary rounded-md w-5 h-5 text-xs leading-none">
+            <span className="font-medium text-xl">
+              {t('menu.home')}
+            </span>
+            <div className="inline-flex items-center justify-center md:ml-1.5 border border-light page-home:border-primary group-hover:border-primary rounded-md w-5 h-5 text-xs leading-none">
               /
             </div>
           </NavLink>
           <NavLink 
             to="/about" 
-            className="page-about:text-primary text-light hover:text-primary transition-colors font-medium text-xl"
-            data-i18n="menu.about"
+            className="flex items-center gap-3 px-4 py-2 page-about:text-primary text-light hover:text-primary hover:bg-darker/50 hover:rounded-lg transition-colors font-medium text-xl"
             onClick={() => setMenuOpen(false)}
           >
-            About
+            {t('menu.about')}
           </NavLink>
           <NavLink 
             to="/play" 
-            className="page-play:text-primary text-light hover:text-primary transition-colors font-medium text-xl"
-            data-i18n="menu.play"
+            className="flex items-center gap-3 px-4 py-2 page-play:text-primary text-light hover:text-primary hover:bg-darker/50 hover:rounded-lg transition-colors font-medium text-xl"
             onClick={() => setMenuOpen(false)}
           >
-            Play
+            {t('menu.play')}
           </NavLink>
-          <NavLink 
-            to="/contact" 
-            className="page-contact:text-primary text-light hover:text-primary transition-colors font-medium text-xl"
-            data-i18n="menu.contact"
-            onClick={() => setMenuOpen(false)}
+          <button 
+            onClick={handleContactClick}
+            className="flex items-center gap-3 px-4 py-2 text-light hover:text-primary hover:bg-darker/50 hover:rounded-lg transition-colors font-medium text-xl text-left"
           >
-            Contact
-          </NavLink>
+            {t('menu.contact')}
+          </button>
         </nav>
       </div>
 
@@ -153,17 +163,21 @@ const MobileHeader: React.FC = () => {
 
 // Combined header component
 const Header: React.FC = () => {
-  const { setLang, refreshTranslations } = useI18n();
+  const { t, setLang, isLoading } = useI18n();
+  const { setShowChat } = useContext(ContactContext);
 
-  useEffect(() => {
-    refreshTranslations();
-  }, [refreshTranslations]);
+  if (isLoading) return null;
+
+  // Handle contact click for desktop header
+  const handleContactClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setShowChat(true);
+  };
 
   return (
     <>
       {/* Desktop Header */}
       <header id="desktop-header" className="fixed top-6 py-3 px-6 lg:px-8 rounded-full bg-dark/30 backdrop-blur-md border border-primary/10 transition-all duration-300 shadow-lg z-50 hidden md:block mx-auto left-0 right-0 w-max">
-        {/* Desktop header content (unchanged) */}
         <nav className="flex items-center gap-4 lg:gap-6">
           <NavLink to="/" className="flex-shrink-0">
             <img src="/img/logo.webp" width="32" height="32" alt="Logo" className="rounded-full" />
@@ -172,14 +186,25 @@ const Header: React.FC = () => {
             <div className="w-px h-4 bg-light/10 hidden md:block"></div>
             <div className="flex md:flex-row items-center gap-4 lg:gap-6">
               <NavLink to="/" className="flex items-center page-home:text-primary text-light hover:text-primary group transition-colors">
-                <span className="font-medium text-lg lg:text-xl" data-i18n="menu.home">Works</span>
+                <span className="font-medium text-lg lg:text-xl">
+                  {t('menu.home')}
+                </span>
                 <div className="inline-flex items-center justify-center ml-1.5 border border-light page-home:border-primary group-hover:border-primary rounded-md w-5 h-5 text-xs leading-none">
                   /
                 </div>
               </NavLink>
-              <NavLink to="/about" className="text-light page-about:text-primary hover:text-primary transition-colors font-medium text-lg lg:text-xl" data-i18n="menu.about">About</NavLink>
-              <NavLink to="/play" className="text-light page-play:text-primary hover:text-primary transition-colors font-medium text-lg lg:text-xl" data-i18n="menu.play">Play</NavLink>
-              <NavLink to="/contact" className="text-light page-contact:text-primary hover:text-primary transition-colors font-medium text-lg lg:text-xl" data-i18n="menu.contact">Contact</NavLink>
+              <NavLink to="/about" className="text-light page-about:text-primary hover:text-primary transition-colors font-medium text-lg lg:text-xl">
+                {t('menu.about')}
+              </NavLink>
+              <NavLink to="/play" className="text-light page-play:text-primary hover:text-primary transition-colors font-medium text-lg lg:text-xl">
+                {t('menu.play')}
+              </NavLink>
+              <button 
+                onClick={handleContactClick}
+                className="text-light hover:text-primary transition-colors font-medium text-lg lg:text-xl cursor-pointer"
+              >
+                {t('menu.contact')}
+              </button>
             </div>
             <div className="w-px h-4 bg-light/10 hidden md:block"></div>
             <div className="relative group ml-auto">
@@ -187,7 +212,7 @@ const Header: React.FC = () => {
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 48.023 0 01-3.827-5.802" />
                 </svg>
-                <span className="text-sm font-medium" data-i18n="config.langCode"></span>
+                <span className="text-sm font-medium">{t('config.langCode')}</span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                 </svg>

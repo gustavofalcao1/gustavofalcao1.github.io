@@ -145,6 +145,20 @@
       }
     }
   },
+  "contact": {
+    "title": "Fale Comigo",
+    "subtitle": "Pergunte algo ou deixe uma mensagem",
+    "placeholder": "Digite sua mensagem...",
+    "sendButton": "Enviar",
+    "messages": {
+      "greeting": "Olá! Como posso ajudar você hoje?",
+      "default": "Obrigado pela sua mensagem. Entrarei em contato em breve!",
+      "hello": "Olá! Como posso ajudar com suas necessidades de projeto?",
+      "project": "Ficarei feliz em discutir os requisitos do seu projeto. Por favor, forneça mais detalhes ou entre em contato diretamente por e-mail.",
+      "contact": "Você pode me contatar em contact@gustavofalcao.dev ou preencher o formulário neste chat.",
+      "pricing": "O preço do projeto depende do escopo e requisitos. Vamos discutir suas necessidades específicas para fornecer uma estimativa precisa."
+    }
+  },
   "footer": {
     "rights": "Todos os direitos reservados"
   }

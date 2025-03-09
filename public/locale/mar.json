@@ -145,6 +145,20 @@
       }
     }
   },
+  "contact": {
+    "title": "Qu'Chat Me",
+    "subtitle": "Ask Qu'Anything or beam a message",
+    "placeholder": "Teleport your thoughts...",
+    "sendButton": "Beam",
+    "messages": {
+      "greeting": "Qapla'! How can this Martian assist you today?",
+      "default": "Your message has been received on Mars. We'll respond via quantum communication soon!",
+      "hello": "Greetings, Earthling! How can I assist with your interplanetary project needs?",
+      "project": "I'd be happy to discuss your quantum project requirements. Please provide more details or send a subspace message.",
+      "contact": "You can reach me at martian@gustavofalcao.universe or use the telepathic form on this chat.",
+      "pricing": "Project pricing is calculated in Martian credits. Let's discuss your cosmic needs for an accurate galactic estimate."
+    }
+  },
   "footer": {
     "rights": "All rights reserved across the galaxy"
   }

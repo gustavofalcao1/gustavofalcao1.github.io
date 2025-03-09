@@ -9,17 +9,7 @@ interface ProjectModalProps {
 }
 
 const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose }) => {
-  const { refreshTranslations } = useI18n();
-  
-  // Apply translations when modal opens with project data
-  useEffect(() => {
-    if (isOpen && project) {
-      // Short delay to ensure DOM is ready
-      setTimeout(() => {
-        refreshTranslations();
-      }, 50);
-    }
-  }, [isOpen, project, refreshTranslations]);
+  const { t, isLoading } = useI18n();
   
   // Add Escape key event listener
   useEffect(() => {
@@ -44,7 +34,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
     };
   }, [isOpen, onClose]);
 
-  if (!project || !isOpen) return null;
+  if (!project || !isOpen || isLoading) return null;
 
   return (
     <div 
@@ -78,25 +68,19 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
           >
             <img 
               src={project.image} 
-              alt={project.id} 
+              alt={t(`projects.${project.id}.title`)}
               className="w-full h-full object-cover"
             />
           </div>
 
           {/* Info */}
           <div className="mt-6">
-            <h2 
-              className="text-2xl md:text-3xl font-bold text-primary mb-4" 
-              data-i18n={`projects.${project.id}.title`}
-            >
-              {project.id}
+            <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">
+              {t(`projects.${project.id}.title`)}
             </h2>
             
-            <p 
-              className="text-light text-base md:text-lg mb-6" 
-              data-i18n={`projects.${project.id}.description`}
-            >
-              Project description
+            <p className="text-light text-base md:text-lg mb-6">
+              {t(`projects.${project.id}.description`)}
             </p>
             
             {/* Tech Stack */}
@@ -137,7 +121,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                   </svg>
-                  <span data-i18n="projects.btn">Demo</span>
+                  {t('projects.btn')}
                 </a>
               )}
             </div>

@@ -2,13 +2,13 @@ import { createContext, useContext, useState, useEffect, useCallback, useRef } f
 
 // Types
 type Language = 'en' | 'pt' | 'mar';
-type TranslationDict = Record<string, string | Record<string, string>>;
+type TranslationDict = Record<string, any>;
 
 interface I18nContextProps {
   lang: Language;
   setLang: (lang: Language) => void;
-  t: (key: string) => string;
-  refreshTranslations: () => void;
+  t: (key: string) => any; // Changed from string to any
+  isLoading: boolean;
 }
 
 // Default context
@@ -16,7 +16,7 @@ const defaultContext: I18nContextProps = {
   lang: 'en',
   setLang: () => {},
   t: (key: string) => key,
-  refreshTranslations: () => {}
+  isLoading: true
 };
 
 // Create context
@@ -53,32 +53,24 @@ const getInitialLanguage = (): Language => {
 // Provider component
 export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [lang, setLang] = useState<Language>(getInitialLanguage());
-  const [translations, setTranslations] = useState<Record<Language, TranslationDict>>({
-    en: {},
-    pt: {},
-    mar: {}
-  });
-  const [refreshCounter, setRefreshCounter] = useState(0);
+  const [translations, setTranslations] = useState<TranslationDict>({});
+  const [isLoading, setIsLoading] = useState(true);
   const shouldUpdateElementsRef = useRef(false);
 
   // Translation function
-  const t = useCallback((key: string): string => {
-    const currentTranslations = translations[lang];
-    if (!currentTranslations || Object.keys(currentTranslations).length === 0) {
-      return key;
-    }
+  const t = useCallback((key: string): any => {
+    if (!translations || Object.keys(translations).length === 0) return '';
 
-    // Handle nested keys like 'header.title'
     const parts = key.split('.');
-    let value: any = currentTranslations;
+    let value: any = translations;
     
     for (const part of parts) {
       value = value?.[part];
-      if (value === undefined) return key;
+      if (value === undefined) return '';
     }
     
-    return typeof value === 'string' ? value : key;
-  }, [lang, translations]);
+    return value; // Return the value as is, whether string or array
+  }, [translations]);
 
   // Update HTML elements with translations
   const updateHtmlElements = useCallback(() => {
@@ -104,35 +96,29 @@ export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }, 0);
   }, [t]);
 
-  // Load translations
+  // Load translations - Modified to be more reliable
   useEffect(() => {
     const loadTranslations = async () => {
+      setIsLoading(true);
       try {
-        // Skip if we already loaded this language
-        if (Object.keys(translations[lang]).length > 0) {
-          // If we already have translations, just update the elements
-          shouldUpdateElementsRef.current = true;
-          return;
-        }
-
+        // Always fetch fresh translations when language changes
         const response = await fetch(`/locale/${lang}.json`);
         if (!response.ok) throw new Error(`Failed to load ${lang} translations`);
         const data = await response.json();
         
-        setTranslations(prev => ({
-          ...prev,
-          [lang]: data
-        }));
+        setTranslations(data);
+        document.documentElement.lang = lang;
+        localStorage.setItem(LANGUAGE_STORAGE_KEY, lang);
         
-        shouldUpdateElementsRef.current = true;
-        console.log(`Loaded translations for ${lang}`);
       } catch (error) {
         console.error('Translation loading error:', error);
+      } finally {
+        setIsLoading(false);
       }
     };
 
     loadTranslations();
-  }, [lang, refreshCounter, translations]); // Removed the circular dependency
+  }, [lang]); // Only depend on language changes
 
   // Effect to update HTML elements after translations are loaded
   useEffect(() => {
@@ -145,7 +131,7 @@ export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({ children
   // Update document attributes when language changes
   useEffect(() => {
     // Skip if translations for this language aren't loaded yet
-    if (Object.keys(translations[lang]).length === 0) return;
+    if (Object.keys(translations).length === 0) return;
     
     // Update HTML lang attribute
     document.documentElement.lang = lang;
@@ -167,20 +153,14 @@ export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({ children
   // Re-apply translations when route changes
   useEffect(() => {
     // Skip if translations aren't loaded yet
-    if (Object.keys(translations[lang]).length === 0) return;
+    if (Object.keys(translations).length === 0) return;
     
     // Apply translations to new elements after route change
     updateHtmlElements();
-  }, [refreshCounter, updateHtmlElements, translations, lang]);
-
-  // Function to manually refresh translations
-  const refreshTranslations = useCallback(() => {
-    updateHtmlElements();
-    setRefreshCounter(prev => prev + 1);
-  }, [updateHtmlElements]);
+  }, [updateHtmlElements, translations, lang]);
 
   return (
-    <I18nContext.Provider value={{ lang, setLang, t, refreshTranslations }}>
+    <I18nContext.Provider value={{ lang, setLang, t, isLoading }}>
       {children}
     </I18nContext.Provider>
   );

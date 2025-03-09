@@ -2,13 +2,11 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useProjects, Project } from '../hooks/useProjects';
 import ProjectCard from './ProjectCard';
 import ProjectModal from './ProjectModal';
-import { useI18n } from '../hooks/useI18n';
 
 const ProjectsGrid: React.FC = () => {
   const { projects, loading, error } = useProjects();
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { refreshTranslations } = useI18n();
   const projectsRef = useRef<HTMLDivElement>(null);
 
   // Animation with Intersection Observer
@@ -38,9 +36,9 @@ const ProjectsGrid: React.FC = () => {
   // Refresh translations when projects load
   useEffect(() => {
     if (!loading && projects.length > 0) {
-      refreshTranslations();
+  
     }
-  }, [loading, projects, refreshTranslations]);
+  }, [loading, projects]);
 
   const handleOpenModal = (projectId: string) => {
     const project = projects.find(p => p.id === projectId) || null;

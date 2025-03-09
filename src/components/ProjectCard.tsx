@@ -1,5 +1,6 @@
 import React from 'react';
 import { Project, techIcons } from '../hooks/useProjects';
+import { useI18n } from '../hooks/useI18n';
 
 interface ProjectCardProps {
   project: Project;
@@ -7,7 +8,10 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
+  const { t, isLoading } = useI18n();
 
+  if (isLoading) return null;
+  
   // Render tech icons safely
   const renderTechIcons = (technologies: string[]) => {
     return technologies.map((tech, index) => (
@@ -29,22 +33,22 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
         >
           <img 
             src={project.image} 
-            alt={project.id} 
+            alt={t(`projects.${project.id}.title`)}
             className="w-full h-full object-cover transform scale-100 group-hover:scale-105 transition-transform duration-300"
             loading="lazy"
           />
         </div>
         
-        <h3 className="text-xl font-medium mb-2 text-gray-100" data-i18n={`projects.${project.id}.title`}>
-          {project.id}
+        <h3 className="text-xl font-medium mb-2 text-gray-100">
+          {t(`projects.${project.id}.title`)}
         </h3>
         
         <div className="flex gap-2 mb-2 text-xl">
           {renderTechIcons(project.technologies)}
         </div>
         
-        <p className="text-light mb-4" data-i18n={`projects.${project.id}.description`}>
-          Project description
+        <p className="text-light mb-4">
+          {t(`projects.${project.id}.description`)}
         </p>
       </div>
 
@@ -78,7 +82,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
-              <span data-i18n="projects.btn">Demo</span>
+              {t('projects.btn')}
             </span>
           </a>
         )}

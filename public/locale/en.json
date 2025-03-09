@@ -145,6 +145,20 @@
       }
     }
   },
+  "contact": {
+    "title": "Contact Me",
+    "subtitle": "Ask me anything or leave a message",
+    "placeholder": "Type your message...",
+    "sendButton": "Send",
+    "messages": {
+      "greeting": "Hi there! How can I help you today?",
+      "default": "Thank you for your message. I'll get back to you soon!",
+      "hello": "Hello! How can I assist you with your project needs?",
+      "project": "I'd be happy to discuss your project requirements. Please provide more details or contact me directly via email.",
+      "contact": "You can reach me at contact@gustavofalcao.dev or fill out the form on this chat.",
+      "pricing": "Project pricing depends on scope and requirements. Let's discuss your specific needs to provide an accurate estimate."
+    }
+  },
   "footer": {
     "rights": "All rights reserved"
   }

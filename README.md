@@ -7,9 +7,14 @@ Modern and responsive personal portfolio website, built with React, TypeScript, 
 ## ✨ Features
 
 - 🌐 Advanced Internationalization (i18n):
-  - 🇧🇷 Portuguese (PT-BR)
+  - 🇵🇹 Portuguese (PT)
   - 🇬🇧 English (EN)
   - 👽 Martian (MAR) - For the fun!
+- 💬 Interactive Chat:
+  - Contact form as a chat interface
+  - Smart responses based on keywords
+  - Fully responsive design
+  - Animated transitions
 - 🎨 Visual Effects:
   - Glassmorphism UI
   - Matrix background effects
@@ -37,6 +42,7 @@ Modern and responsive personal portfolio website, built with React, TypeScript, 
 - JSON for data management
 - Custom animations
 - React Hooks for state management
+- React Context for global state
 
 ## 📁 Project Structure
 
