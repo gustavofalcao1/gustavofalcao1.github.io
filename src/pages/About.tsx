@@ -1,15 +1,61 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useI18n } from '../hooks/useI18n';
 
+// Define types for expertise data
+interface ExpertiseItem {
+  items: string[];
+  title: string;
+}
+
+interface ExpertiseData {
+  [category: string]: ExpertiseItem;
+}
+
 const About: React.FC = () => {
-  const { refreshTranslations } = useI18n();
+  const { refreshTranslations, lang } = useI18n();
+  const [expertiseData, setExpertiseData] = useState<ExpertiseData | null>(null);
   
+  // Refresh translations when component mounts
   useEffect(() => {
     refreshTranslations();
   }, [refreshTranslations]);
   
+  // Load expertise data
+  useEffect(() => {
+    const loadExpertiseData = async () => {
+      try {
+        const response = await fetch(`/locale/${lang}.json`);
+        const data = await response.json();
+        
+        // Access the correct JSON structure
+        const categories = data.about.sections.expertise.categories;
+        setExpertiseData(categories);
+      } catch (error) {
+        console.error('Error loading expertise data:', error);
+      }
+    };
+    
+    loadExpertiseData();
+  }, [lang]);
+  
+  // Render expertise list for a category
+  const renderExpertiseList = (category: string) => {
+    if (!expertiseData || !expertiseData[category]) {
+      return null;
+    }
+    
+    return expertiseData[category].items.map((skill, index) => (
+      <li key={index} className="flex items-center gap-2 text-light group-hover:text-white transition-colors">
+        <svg className="w-4 h-4 text-primary group-hover:text-secondary transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4"/>
+        </svg>
+        <span>{skill}</span>
+      </li>
+    ));
+  };
+  
   return (
-    <main className="min-h-screen w-full lg:pt-24 mb-20">
+    <main className="min-h-screen w-full md:pt-24 mb-20">
       <section className="hero relative flex flex-col md:flex-row items-start justify-center px-4 md:px-6 gap-8 mt-4 lg:mt-12 max-w-7xl mx-auto">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent rounded-3xl filter blur-3xl opacity-30"></div>
         
@@ -35,19 +81,22 @@ const About: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="group p-6 rounded-2xl bg-dark/30 backdrop-blur-md border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1">
                 <h3 className="text-xl font-medium mb-4 text-primary group-hover:text-secondary transition-colors" data-i18n="about.sections.expertise.categories.systems.title">Systems & DevOps</h3>
-                <ul className="space-y-3" id="systems-list">
+                <ul className="space-y-3">
+                  {renderExpertiseList('systems')}
                 </ul>
               </div>
 
               <div className="group p-6 rounded-2xl bg-dark/30 backdrop-blur-md border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1">
                 <h3 className="text-xl font-medium mb-4 text-primary group-hover:text-secondary transition-colors" data-i18n="about.sections.expertise.categories.development.title">Development</h3>
-                <ul className="space-y-3" id="development-list">
+                <ul className="space-y-3">
+                  {renderExpertiseList('development')}
                 </ul>
               </div>
 
               <div className="group p-6 rounded-2xl bg-dark/30 backdrop-blur-md border border-primary/10 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1">
                 <h3 className="text-xl font-medium mb-4 text-primary group-hover:text-secondary transition-colors" data-i18n="about.sections.expertise.categories.architecture.title">Architecture</h3>
-                <ul className="space-y-3" id="architecture-list">
+                <ul className="space-y-3">
+                  {renderExpertiseList('architecture')}
                 </ul>
               </div>
             </div>

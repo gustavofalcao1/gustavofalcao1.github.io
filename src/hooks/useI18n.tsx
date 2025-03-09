@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import { createContext, useContext, useState, useEffect, useCallback, useRef } from 'react';
 
 // Types
 type Language = 'en' | 'pt' | 'mar';
@@ -58,40 +58,8 @@ export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({ children
     pt: {},
     mar: {}
   });
-  // Remove this line
-  // const location = useLocation();
-  
-  // Add refresh counter instead
   const [refreshCounter, setRefreshCounter] = useState(0);
-
-  // Load translations
-  useEffect(() => {
-    const loadTranslations = async () => {
-      try {
-        // Skip if we already loaded this language
-        if (Object.keys(translations[lang]).length > 0) {
-          // If we already have translations, just update the elements
-          updateHtmlElements();
-          return;
-        }
-
-        const response = await fetch(`/locale/${lang}.json`);
-        if (!response.ok) throw new Error(`Failed to load ${lang} translations`);
-        const data = await response.json();
-        
-        setTranslations(prev => ({
-          ...prev,
-          [lang]: data
-        }));
-        
-        console.log(`Loaded translations for ${lang}`);
-      } catch (error) {
-        console.error('Translation loading error:', error);
-      }
-    };
-
-    loadTranslations();
-  }, [lang, refreshCounter]); // Removed translations dependency to avoid circular deps
+  const shouldUpdateElementsRef = useRef(false);
 
   // Translation function
   const t = useCallback((key: string): string => {
@@ -135,6 +103,44 @@ export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({ children
       });
     }, 0);
   }, [t]);
+
+  // Load translations
+  useEffect(() => {
+    const loadTranslations = async () => {
+      try {
+        // Skip if we already loaded this language
+        if (Object.keys(translations[lang]).length > 0) {
+          // If we already have translations, just update the elements
+          shouldUpdateElementsRef.current = true;
+          return;
+        }
+
+        const response = await fetch(`/locale/${lang}.json`);
+        if (!response.ok) throw new Error(`Failed to load ${lang} translations`);
+        const data = await response.json();
+        
+        setTranslations(prev => ({
+          ...prev,
+          [lang]: data
+        }));
+        
+        shouldUpdateElementsRef.current = true;
+        console.log(`Loaded translations for ${lang}`);
+      } catch (error) {
+        console.error('Translation loading error:', error);
+      }
+    };
+
+    loadTranslations();
+  }, [lang, refreshCounter, translations]); // Removed the circular dependency
+
+  // Effect to update HTML elements after translations are loaded
+  useEffect(() => {
+    if (shouldUpdateElementsRef.current) {
+      updateHtmlElements();
+      shouldUpdateElementsRef.current = false;
+    }
+  }, [translations, updateHtmlElements]);
 
   // Update document attributes when language changes
   useEffect(() => {

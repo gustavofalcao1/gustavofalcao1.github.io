@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useI18n } from '../hooks/useI18n';
+import ProjectsGrid from '../components/ProjectsGrid';
 
 const Home: React.FC = () => {
   const { refreshTranslations } = useI18n();
@@ -33,7 +34,7 @@ const Home: React.FC = () => {
       </section>
       <section className="projects py-16 md:py-28 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"></div>
+          <ProjectsGrid />
         </div>
       </section>
     </main>

@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import 'flag-icons/css/flag-icons.min.css';
+@import 'devicon/devicon.min.css';
 
 body {
   margin: 0;

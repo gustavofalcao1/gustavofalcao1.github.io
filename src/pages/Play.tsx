@@ -9,8 +9,8 @@ const Play: React.FC = () => {
   }, [refreshTranslations]);
 
   return (
-    <main className="flex-grow flex items-center justify-center px-4 relative">
-      <div className="text-center mt-12 z-10">
+    <main className="flex-grow flex items-center justify-center px-4 relative md:pt-24">
+      <div className="text-center z-10">
         <h1 className="text-5xl font-bold py-2 my-10 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent" data-i18n="404.title">You found the limit of this matrix!</h1>
         <div className="relative">
           <h1 className="text-9xl md:text-[12rem] font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent" style={{animation: "glitch 3s infinite"}} data-i18n="404.heading">404</h1>
