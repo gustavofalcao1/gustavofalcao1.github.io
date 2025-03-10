@@ -1,15 +1,20 @@
 # 🚀 Portfolio - Gustavo Falcão
 
-Modern and responsive personal portfolio website, built with HTML, JavaScript and CSS.
+Modern and responsive personal portfolio website, built with React, TypeScript, and Tailwind CSS.
 
 ![Gustavo Falcão](screenshots/img-00.png)
 
 ## ✨ Features
 
 - 🌐 Advanced Internationalization (i18n):
-  - 🇧🇷 Portuguese (PT-BR)
+  - 🇵🇹 Portuguese (PT)
   - 🇬🇧 English (EN)
   - 👽 Martian (MAR) - For the fun!
+- 💬 Interactive Chat:
+  - Contact form as a chat interface
+  - Smart responses based on keywords
+  - Fully responsive design
+  - Animated transitions
 - 🎨 Visual Effects:
   - Glassmorphism UI
   - Matrix background effects
@@ -32,34 +37,30 @@ Modern and responsive personal portfolio website, built with HTML, JavaScript an
 
 ## 🔧 Technical Stack
 
-- HTML5 & CSS3
-- Vanilla JavaScript (ES6+)
+- React with TypeScript
+- Tailwind CSS for styling
 - JSON for data management
 - Custom animations
+- React Hooks for state management
+- React Context for global state
 
 ## 📁 Project Structure
 
 ```
 (root)/
-├── assets/
-│   └── img/           # Images and visual resources including project works
-├── css/
-│   ├── matrix.css     # Matrix animation styles
-│   └── styles.css     # Main stylesheet
-├── js/
-│   ├── about.js       # About page functionality
-│   ├── i18n.js        # Internationalization system
-│   ├── main.js        # Core application logic
-│   ├── matrix.js      # Matrix animation logic
-│   └── works.js       # Project rendering logic
-├── data/
-│   └── works.json     # Project data
-├── locale/
-│   ├── en.json        # English translations
-│   ├── pt.json        # Portuguese translations
-│   └── mar.json       # Martian translations
-├── about/             # About page
-└── play/              # Interactive playground section
+├── public/
+│   ├── img/           # Images and visual resources including project works
+│   ├── data/          # JSON data files
+│   ├── locale/        # Language translation files
+│   └── ...            # Other static assets
+├── src/
+│   ├── components/    # Reusable UI components
+│   ├── hooks/         # Custom React hooks
+│   ├── pages/         # Application pages
+│   ├── App.tsx        # Main application component
+│   └── index.tsx      # Application entry point
+├── docs/              # Documentation
+└── screenshots/       # Project screenshots
 ```
 
 ## 🚀 How to Run
@@ -69,11 +70,24 @@ Modern and responsive personal portfolio website, built with HTML, JavaScript an
 git clone https://github.com/gustavofalcao1/gustavofalcao1.github.io.git
 ```
 
-2. Open the `index.html` file in your browser or use a local server:
+2. Install dependencies:
 ```bash
-# Using Python to create a simple HTTP server
-python -m http.server
+npm install
 ```
+
+3. Start the development server:
+```bash
+npm start
+```
+
+4. Build for production:
+```bash
+npm run build
+```
+
+## 📚 Documentation
+
+For information on how to manage texts and languages in the application, please check the [Translation Management Guide](docs/translation-management.md).
 
 ## ⚠️ Copyright
 

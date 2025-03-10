@@ -1,0 +1,165 @@
+{
+  "config": {
+    "lang": "mar",
+    "langName": "Martian",
+    "langCode": "MAR",
+    "loading": "Kh'loading..."
+  },
+  "title": "Qu'vatlh Engineer",
+  "name": "Gustavo Falcão",
+  "hi": "Qapla' 👽",
+  "im": "jIH",
+  "description": "nuqneH! jIH transform Qapla' into yIn, complexity into Qap, Qahveh into scalable code ☕🚀👾",
+  "pageTitle": "Gustavo Falcão - Qu'vatlh Engineer",
+  "metaDescription": "Red Planet Personal Database. Qu'vatlh Engineer, Full Stack Developer, Open Source warrior.",
+  "metaKeywords": "martian engineer, space developer, quantum coder",
+  "menu": {
+    "home": "Qu'Works",
+    "about": "nuqneH",
+    "play": "yIlop",
+    "contact": "jIjatlh"
+  },
+  "404": {
+    "pageTitle": "404 - Page Teleported",
+    "title": "You've reached the edge of Mars!",
+    "heading": "404",
+    "error": "Oops! You found a quantum anomaly.",
+    "description": "The page was abducted by Earth aliens... 🌍",
+    "button": "Beam back Home"
+  },
+  "home": {
+    "title": "Qu'Works"
+  },
+  "projects": {
+    "btn": "Beam to Project",
+    "project1": {
+      "title": "Cluey-App",
+      "description": "Quantum social network app with AI focused on interplanetary collaboration."
+    },
+    "project2": {
+      "title": "Cluey-Web",
+      "description": "Quantum web portal with AI focused on cross-dimensional productivity."
+    },
+    "project3": {
+      "title": "GeekSmart",
+      "description": "Quantum inventory and life form management system."
+    },
+    "project4": {
+      "title": "Tasks",
+      "description": "Telepathic task management app with quantum optimization."
+    },
+    "project5": {
+      "title": "WebSchool",
+      "description": "Martian academy management with quantum knowledge transfer."
+    },
+    "project6": {
+      "title": "Starfield Language Tools",
+      "description": "Universal translator for Earth games, because humans need help with languages."
+    },
+    "project7": {
+      "title": "NodeDO",
+      "description": "Quantum task manager with antimatter database."
+    },
+    "project8": {
+      "title": "AiChat CLI",
+      "description": "Telepathic command interface for quantum AI communication."
+    },
+    "project9": {
+      "title": "Project Qu'9",
+      "description": "Classified Martian Technology"
+    },
+    "project10": {
+      "title": "Project Qu'10",
+      "description": "Top Secret Quantum Initiative"
+    }
+  },
+  "about": {
+    "pageTitle": "Gustavo Falcão - nuqneH?",
+    "metaDescription": "Learn about the universal solutions architect from Mars.",
+    "title": "nuqneH?",
+    "bio1": "jIH Gustavo Falcão, Qu'vatlh Engineer with many Mars cycles of experience. Started in Earth's electronics, mastered quantum mechanics, now building interplanetary systems.",
+    "bio2": "Trained in both Earth and Martian technologies, bringing the best of both worlds to create universal solutions.",
+    "sections": {
+      "expertise": {
+        "title": "Qu'Skills",
+        "categories": {
+          "systems": {
+            "title": "Quantum Systems",
+            "items": [
+              "Quantum OS (RedDust, BlueStorm)",
+              "Earth Systems Compatibility Layer",
+              "Telepathic Interface Programming",
+              "Antimatter Shell Scripting",
+              "Plasma Containerization",
+              "Quantum CI/CD Teleportation",
+              "Multi-Dimensional Cloud Computing",
+              "Universal CLI Development",
+              "Martian System Automation"
+            ]
+          },
+          "development": {
+            "title": "Space Development",
+            "items": [
+              "Full Stack Space Development",
+              "Quantum.js & BrainScript",
+              "Telepathy & Next Dimension",
+              "Universal REST APIs",
+              "Python (CLI, API, Quantum AI)",
+              "Interplanetary System Integration",
+              "Cross-Galaxy Development",
+              "Clean Code & Best Alien Practices"
+            ]
+          },
+          "architecture": {
+            "title": "Universal Architecture",
+            "items": [
+              "Multi-Dimensional Systems",
+              "Quantum Scalable Solutions",
+              "Telepathic Performance Optimization",
+              "Universal APIS Design",
+              "Antimatter Database Design",
+              "Quantum Architecture",
+              "Interstellar Microservices",
+              "Galactic Security Systems"
+            ]
+          }
+        }
+      },
+      "evolution": {
+        "title": "Time Warp",
+        "0": {
+          "period": "2022 - Now'tlh",
+          "where": "Quantum Engineering Academy of Mars",
+          "position": "Universal Solutions Architect"
+        },
+        "1": {
+          "period": "2018 - 2022",
+          "where": "Self-Study in the Caves of Olympus Mons",
+          "position": "Quantum Developer & Space Admin"
+        },
+        "2": {
+          "period": "2013 - 2018",
+          "where": "Earth Technology Exchange Program",
+          "position": "Matter Manipulation Technician"
+        }
+      }
+    }
+  },
+  "contact": {
+    "title": "Qu'Chat Me",
+    "subtitle": "Ask Qu'Anything or beam a message",
+    "placeholder": "Teleport your thoughts...",
+    "sendButton": "Beam",
+    "messages": {
+      "greeting": "Qapla'! How can this Martian assist you today?",
+      "default": "Your message has been received on Mars. We'll respond via quantum communication soon!",
+      "hello": "Greetings, Earthling! How can I assist with your interplanetary project needs?",
+      "project": "I'd be happy to discuss your quantum project requirements. Please provide more details or send a subspace message.",
+      "contact": "You can reach me at martian@gustavofalcao.universe or use the telepathic form on this chat.",
+      "pricing": "Project pricing is calculated in Martian credits. Let's discuss your cosmic needs for an accurate galactic estimate."
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved across the galaxy"
+  }
+}
