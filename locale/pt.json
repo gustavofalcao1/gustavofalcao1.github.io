@@ -1,0 +1,165 @@
+{
+  "config": {
+    "lang": "pt",
+    "langName": "Português",
+    "langCode": "PT",
+    "loading": "Carregando..."
+  },
+  "title": "Engenheiro de Software",
+  "name": "Gustavo Falcão",
+  "hi": "Olá 👋",
+  "im": "Sou o",
+  "description": "Transformo problemas em soluções, complexidade em eficiência e café em código escalável ☕💻🚀",
+  "pageTitle": "Gustavo Falcão - Engenheiro de Software",
+  "metaDescription": "Website pessoal de Gustavo Falcão. Engenheiro de Software, Arquiteto de Soluções e entusiasta de Open Source.",
+  "metaKeywords": "engenheiro de software, arquiteto de soluções, desenvolvedor",
+  "menu": {
+    "home": "Projetos",
+    "about": "Sobre",
+    "play": "Playground",
+    "contact": "Contato"
+  },
+  "404": {
+    "pageTitle": "404 - Página não encontrada",
+    "title": "Você encontrou o limite dessa matrix!",
+    "heading": "404",
+    "error": "Ops! Parece que você encontrou um bug.",
+    "description": "A página que você está procurando foi abduzida por aliens... 👽",
+    "button": "Voltar para Home"
+  },
+  "home": {
+    "title": "Works"
+  },
+  "projects": {
+    "btn": "Ver projeto",
+    "project1": {
+      "title": "Cluey-App",
+      "description": "App mobile de rede social com IA focado em trabalho colaborativo, organização de tarefas e produtividade."
+    },
+    "project2": {
+      "title": "Cluey-Web",
+      "description": "App web de rede social com IA focado em trabalho colaborativo, organização de tarefas e produtividade."
+    },
+    "project3": {
+      "title": "GeekSmart",
+      "description": "Um gerente de funcionários e inventário, simples, leve e seguro."
+    },
+    "project4": {
+      "title": "Tasks",
+      "description": "App mobile produtiva de gerenciamento de tarefas, com foco no minimalismo e otimização."
+    },
+    "project5": {
+      "title": "WebSchool",
+      "description": "Plataforma de gestão escolar com controlo de salas, utilizadores, stock e requisições."
+    },
+    "project6": {
+      "title": "Starfield Language Tools",
+      "description": "Como a Bethesda Game Studios não colocou uma opção simples para alterar o idioma do jogo Starfield, criei esse aplicativo simples para fazê -lo."
+    },
+    "project7": {
+      "title": "NodeDO",
+      "description": "Gestor de tarefas em node, com base de dados bem estruturada e leve, objetivo é ser simples e eficiente com node puro."
+    },
+    "project8": {
+      "title": "AiChat CLI",
+      "description": "Um chat de IA em linha de comando, com contexto e opções de personalização e um método de copiar os resultados para a área de transferência, sem precisar de interface gráfica no sistema."
+    },
+    "project9": {
+      "title": "Nome do Projeto 9",
+      "description": "Descrição detalhada do projeto 9"
+    },
+    "project10": {
+      "title": "Nome do Projeto 10",
+      "description": "Descrição detalhada do projeto 10"
+    }
+  },
+  "about": {
+    "pageTitle": "Gustavo Falcão - Quem sou eu?",
+    "metaDescription": "Saiba mais sobre Gustavo Falcão, Arquiteto de Soluções e Engenheiro de Software.",
+    "title": "Quem sou eu?",
+    "bio1": "Me chamo Gustavo Falcão, sou um Arquiteto de Soluções e Engenheiro de Software com mais de uma década de experiência em tecnologia. Minha jornada começou na eletrônica, evoluiu para desenvolvimento web e automação Linux, e culminou com minha formação em Engenharia Informática.",
+    "bio2": "Esta trajetória multidisciplinar me permite ter uma visão única do desenvolvimento, combinando conhecimento prático em eletrônica, domínio avançado de sistemas operacionais e habilidade em desenvolvimento de software.",
+    "sections": {
+      "expertise": {
+        "title": "Habilidades",
+        "categories": {
+          "systems": {
+            "title": "Sistemas & DevOps",
+            "items": [
+              "Linux (Debian, Arch, Fedora)",
+              "Windows Server & Desktop",
+              "macOS",
+              "Shell Scripting (Bash, PowerShell)",
+              "Docker & Kubernetes",
+              "CI/CD Pipelines",
+              "Cloud (AWS, GCP)",
+              "Desenvolvimento de CLI",
+              "Automatização de Sistemas"
+            ]
+          },
+          "development": {
+            "title": "Desenvolvimento",
+            "items": [
+              "Desenvolvimento Full Stack",
+              "Node.js & TypeScript",
+              "React & Next.js",
+              "APIs RESTful",
+              "Python (CLI, API, AI)",
+              "Integração de Sistemas",
+              "Desenvolvimento Cross-Platform",
+              "Código Limpo e Boas Práticas"
+            ]
+          },
+          "architecture": {
+            "title": "Arquitetura",
+            "items": [
+              "Sistemas Distribuídos",
+              "Soluções Escaláveis",
+              "Otimização de Performance",
+              "Design de APIs e Sistemas",
+              "Design de Banco de Dados",
+              "Arquitetura de Cloud",
+              "Arquitetura de Microsserviços",
+              "Segurança de Sistemas"
+            ]
+          }
+        }
+      },
+      "evolution": {
+        "title": "Evolução",
+        "0": {
+          "period": "2022 - Atual",
+          "where": "Licenciatura em Engenharia Informática e Formações",
+          "position": "Arquiteto de Soluções & Engenheiro de Software"
+        },
+        "1": {
+          "period": "2018 - 2022",
+          "where": "Técnico em Redes e Sistemas, Autodidata e Cursos",
+          "position": "Desenvolvedor Full Stack & SysAdmin"
+        },
+        "2": {
+          "period": "2013 - 2018",
+          "where": "Experiencia Profissional e Estudos Autodidatas",
+          "position": "Técnico em Eletrónica e Programador"
+        }
+      }
+    }
+  },
+  "contact": {
+    "title": "Fale Comigo",
+    "subtitle": "Pergunte algo ou deixe uma mensagem",
+    "placeholder": "Digite sua mensagem...",
+    "sendButton": "Enviar",
+    "messages": {
+      "greeting": "Olá! Como posso ajudar você hoje?",
+      "default": "Obrigado pela sua mensagem. Entrarei em contato em breve!",
+      "hello": "Olá! Como posso ajudar com suas necessidades de projeto?",
+      "project": "Ficarei feliz em discutir os requisitos do seu projeto. Por favor, forneça mais detalhes ou entre em contato diretamente por e-mail.",
+      "contact": "Você pode me contatar em contact@gustavofalcao.dev ou preencher o formulário neste chat.",
+      "pricing": "O preço do projeto depende do escopo e requisitos. Vamos discutir suas necessidades específicas para fornecer uma estimativa precisa."
+    }
+  },
+  "footer": {
+    "rights": "Todos os direitos reservados"
+  }
+}
