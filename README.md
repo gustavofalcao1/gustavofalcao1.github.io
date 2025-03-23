@@ -1,103 +1,126 @@
-# 🚀 Portfolio - Gustavo Falcão
+# [🚀 Portfolio - Gustavo Falcão](https://gustavofalcao1.github.io/)
 
-Modern and responsive personal portfolio website, built with React, TypeScript, and Tailwind CSS.
+A modern, animated, and responsive personal portfolio website built with **React**, **TypeScript**, and **Tailwind CSS**, showcasing technical skills, projects, and personality through elegant visual effects and multilingual support.
 
 ![Gustavo Falcão](screenshots/img-00.png)
 
+---
+
 ## ✨ Features
 
-- 🌐 Advanced Internationalization (i18n):
-  - 🇵🇹 Portuguese (PT)
-  - 🇬🇧 English (EN)
-  - 👽 Martian (MAR) - For the fun!
-- 💬 Interactive Chat:
-  - Contact form as a chat interface
-  - Smart responses based on keywords
-  - Fully responsive design
-  - Animated transitions
-- 🎨 Visual Effects:
-  - Glassmorphism UI
-  - Matrix background effects
-  - Smooth transitions
-  - Dynamic hover effects
-  - Responsive layouts
-- 📱 Responsive Design:
-  - Mobile-first approach
-  - Tablet optimization
-  - Desktop enhancement
-- 🛠️ Dynamic Content:
-  - Project showcase
-  - Interactive sections
-  - Language selection
-  - Play section
-- 🎯 Performance:
-  - Optimized assets (WebP images)
-  - Progressive loading
-  - Clean code structure
+### 🌐 Internationalization (i18n)
+- 🇵🇹 Portuguese (PT)
+- 🇬🇧 English (EN)
+- 👽 Martian (MAR) — Just for fun!
 
-## 🔧 Technical Stack
+### 💬 Interactive Chat Interface
+- Contact form designed as a chat window
+- Smart replies based on keyword detection
+- Responsive and animated UI
 
-- React with TypeScript
-- Tailwind CSS for styling
-- JSON for data management
-- Custom animations
-- React Hooks for state management
-- React Context for global state
+### 🎨 Visual Effects
+- Glassmorphism design
+- Matrix-style background animations
+- Smooth page and element transitions
+- Dynamic hover and entrance effects
+
+### 📱 Responsive Design
+- Fully mobile-first layout
+- Adaptive structure for tablet and desktop
+
+### 🛠️ Dynamic & Modular Content
+- Project portfolio showcase
+- Language and theme toggles
+- Interactive "Play" zone
+- Reusable and modular components
+
+### ⚡ Performance Optimization
+- WebP image support for faster loading
+- Progressive loading techniques
+- Clean, scalable component structure
+
+---
+
+## 🔧 Tech Stack
+
+- **Frontend:** React + TypeScript
+- **Styling:** Tailwind CSS
+- **State Management:** React Hooks, Context API
+- **Data Format:** JSON (content and translations)
+- **Build Tooling:** Vite (if applicable)
+
+---
 
 ## 📁 Project Structure
 
 ```
 (root)/
 ├── public/
-│   ├── img/           # Images and visual resources including project works
-│   ├── data/          # JSON data files
-│   ├── locale/        # Language translation files
-│   └── ...            # Other static assets
+│   ├── img/           # Static image assets and project screenshots
+│   ├── data/          # JSON files for projects and content
+│   ├── locale/        # Language translation JSON files
+│   └── ...            # Favicon and other public assets
 ├── src/
-│   ├── components/    # Reusable UI components
+│   ├── components/    # UI components
 │   ├── hooks/         # Custom React hooks
-│   ├── pages/         # Application pages
-│   ├── App.tsx        # Main application component
-│   └── index.tsx      # Application entry point
-├── docs/              # Documentation
-└── screenshots/       # Project screenshots
+│   ├── pages/         # Application page views
+│   ├── App.tsx        # Root app component
+│   └── index.tsx      # Main entry point
+├── docs/              # Additional documentation
+└── screenshots/       # Visual documentation assets
 ```
 
-## 🚀 How to Run
+---
 
-1. Clone the repository:
+## 🚀 Getting Started
+
+### 1. Clone the repository:
 ```bash
 git clone https://github.com/gustavofalcao1/gustavofalcao1.github.io.git
+cd gustavofalcao1.github.io
 ```
 
-2. Install dependencies:
+### 2. Install dependencies:
 ```bash
 npm install
 ```
 
-3. Start the development server:
+### 3. Start the development server:
 ```bash
 npm start
 ```
 
-4. Build for production:
+### 4. Build for production:
 ```bash
 npm run build
 ```
 
+---
+
 ## 📚 Documentation
 
-For information on how to manage texts and languages in the application, please check the [Translation Management Guide](docs/translation-management.md).
+Refer to the guide below for managing content and multilingual support:
 
-## ⚠️ Copyright
+- [Translation Management](docs/translation-management.md)
 
-This is a personal portfolio. All rights reserved. The code and content of this project are the exclusive property of Gustavo Falcão.
+---
 
-## 📫 Contact
+## 📄 License
 
-- LinkedIn: [Gustavo Falcão](https://www.linkedin.com/in/gustavofalcao1)
-- GitHub: [@gustavofalcao1](https://github.com/gustavofalcao1)
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
 
-## 📝 License
+---
 
-This project is under the MIT license. See the [LICENSE](LICENSE) file for more details.
+## 👤 Author
+**Gustavo Falcão**  
+[GitHub @gustavofalcao1](https://github.com/gustavofalcao1)  
+[LinkedIn](https://www.linkedin.com/in/gustavofalcao1)
+
+---
+
+## ⚠️ Notice
+
+This is a **personal portfolio** intended for self-presentation purposes. All content (text, design, visuals) is the exclusive property of Gustavo Falcão. Unauthorized use or reproduction is prohibited.
+
+---
+
