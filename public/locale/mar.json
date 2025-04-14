@@ -159,6 +159,30 @@
       "pricing": "Project pricing is calculated in Martian credits. Let's discuss your cosmic needs for an accurate galactic estimate."
     }
   },
+  "play": {
+    "title": "yIlop Qapla'!",
+    "module": {
+      "notfound": "Module'Ha' tlhab!",
+      "backplay": "Beam yIlop",
+      "back": "Beam",
+      "react-web": {
+        "title": "Qu'Web React",
+        "description": "Mini zone forged in React",
+        "item1": {
+          "title": "Mini Qu'Web: Reactify",
+          "description": "Explore micro Qap'Zone powered by React — real components, fake nav, true yIn flows."
+        }
+      },
+      "react-native": {
+        "title": "React Native",
+        "description": "Telepathic UI protoApp",
+        "item1": {
+          "title": "SimuQap Demo",
+          "description": "Mobile protoApp forged with React Nebula — warp nav, responsive Qap UI, yIlop inside my Qu'Play zone."
+        }
+      }
+    }
+  },
   "footer": {
     "rights": "All rights reserved across the galaxy"
   }

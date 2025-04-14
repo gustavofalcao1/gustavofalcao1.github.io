@@ -10,8 +10,10 @@ import Layout from './components/Layout';
 
 import Home from './pages/Home';
 import About from './pages/About';
-import Play from './pages/Play';
 import NotFound from './pages/NotFound';
+
+import Play from './pages/Play';
+import PlayModule from './pages/Play/PlayModule'; 
 
 // Create a context for chat visibility
 export const ContactContext = createContext<{
@@ -35,8 +37,10 @@ const App: React.FC = () => {
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
               <Route path="about" element={<About />} />
-              <Route path="play" element={<Play />} />
               <Route path="*" element={<NotFound />} />
+              
+              <Route path="play" element={<Play />} />
+              <Route path="play/:moduleId" element={<PlayModule />} />
             </Route>
           </Routes>
           <ContactChat 

@@ -34,7 +34,7 @@ const About: React.FC = () => {
         {/* Content container */}
         <div className="relative w-full flex flex-col items-start justify-start text-left z-10">
           {/* Title */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 animate-gradient bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%] bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
             {t('about.title')}
           </h1>
           
