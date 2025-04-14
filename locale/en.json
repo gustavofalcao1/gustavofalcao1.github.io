@@ -159,6 +159,30 @@
       "pricing": "Project pricing depends on scope and requirements. Let's discuss your specific needs to provide an accurate estimate."
     }
   },
+  "play": {
+    "title": "Have fun",
+    "module": {
+      "notfound": "Module not found",
+      "backplay": "Return to the Playground",
+      "back": "Return",
+      "react-web": {
+        "title": "React Web",
+        "description": "Mini website made in React",
+        "item1": {
+          "title": "Mini Website: Reactify™",
+          "description": "Explore this micro Landing Page made 100% in React - with real components, fake navigation and true fun."
+        }
+      },
+      "react-native": {
+        "title": "React Native",
+        "description": "Mobile UI simulator",
+        "item1": {
+          "title": "React Native Demo",
+          "description": "Simulation of a mobile application made in react native, with navigation, UI responsive and mobile experience within my personal playground."
+        }
+      }
+    }
+  },
   "footer": {
     "rights": "All rights reserved"
   }
