@@ -2,7 +2,7 @@
 
 A modern, animated, and responsive personal portfolio website built with **React**, **TypeScript**, and **Tailwind CSS**, showcasing technical skills, projects, and personality through elegant visual effects and multilingual support.
 
-![Gustavo Falcão](screenshots/img-00.png)
+![Gustavo Falcão](screenshots/0.png)
 
 ---
 
