@@ -117,10 +117,3 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 [LinkedIn](https://www.linkedin.com/in/gustavofalcao1)
 
 ---
-
-## ⚠️ Notice
-
-This is a **personal portfolio** intended for self-presentation purposes. All content (text, design, visuals) is the exclusive property of Gustavo Falcão. Unauthorized use or reproduction is prohibited.
-
----
-
