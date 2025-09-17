@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { Project, techIcons } from '../hooks/useProjects';
+import { Project } from '../types/project';
+import { techIcons } from '../lib/icons';
 import { useI18n } from '../hooks/useI18n';
 
 interface ProjectModalProps {
@@ -85,7 +86,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
             
             {/* Tech Stack */}
             <div className="flex flex-wrap gap-3 mb-6">
-              {project.technologies.map((tech, index) => (
+              {project.technologies.map((tech: string, index: number) => (
                 <div 
                   key={index}
                   className="tooltip text-xl md:text-2xl" 

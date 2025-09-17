@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useProjects, Project } from '../hooks/useProjects';
+import { useProjects } from '../hooks/useProjects';
+import { Project } from '../types/project';
 import ProjectCard from './ProjectCard';
 import ProjectModal from './ProjectModal';
 

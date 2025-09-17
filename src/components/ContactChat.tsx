@@ -34,7 +34,7 @@ export function ContactChat({ isVisible, onClose }: ContactChatProps) {
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [hasSubmitted, setHasSubmitted] = useState(false);
+  //const [hasSubmitted, setHasSubmitted] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   
   // Keep track if chat has been opened at least once
@@ -78,7 +78,7 @@ export function ContactChat({ isVisible, onClose }: ContactChatProps) {
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
     setIsLoading(true);
-    setHasSubmitted(true);
+    //setHasSubmitted(true);
 
     // Simulate AI response after delay
     setTimeout(() => {

@@ -1,115 +1,150 @@
-import { useState, useEffect } from 'react';
+// src/hooks/useProjects.tsx
+import { useState, useEffect, useMemo, useCallback } from 'react';
+import { Project, GitHubRepo } from '../types/project';
+import { manualProjects, projectOverrides, ignoredRepos, technologyMapper } from '../data/projectsConfig';
+import { techIcons } from '../lib/icons';
 
-// Define types for better type safety
-export interface Project {
-  id: string;
-  image: string;
-  color: string;
-  technologies: string[];
-  github?: string;
-  demo?: string;
-}
+const GITHUB_API = 'https://api.github.com';
+const GITHUB_USERNAME = 'gustavofalcao1';
 
-export const techIcons: Record<string, string> = {
-  'React': '<i class="devicon-react-original colored"></i>',
-  'ReactNavigation': '<i class="devicon-reactnavigation-original colored"></i>',
-  'Node.js': '<i class="devicon-nodejs-plain colored"></i>',
-  'MongoDB': '<i class="devicon-mongodb-plain colored"></i>',
-  'Vue.js': '<i class="devicon-vuejs-plain colored"></i>',
-  'Express': '<i class="devicon-express-original"></i>',
-  'PostgreSQL': '<i class="devicon-postgresql-plain colored"></i>',
-  'Android': '<i class="devicon-android-plain colored"></i>',
-  'Apple': '<i class="devicon-apple-plain theme-light:colored"></i>',
-  'Bootstrap': '<i class="devicon-bootstrap-plain colored"></i>',
-  'CSS3': '<i class="devicon-css3-plain colored"></i>',
-  'Django': '<i class="devicon-django-plain colored"></i>',
-  'Electron': '<i class="devicon-electron-original colored"></i>',
-  'Firebase': '<i class="devicon-firebase-plain colored"></i>',
-  'Flask': '<i class="devicon-flask-original colored"></i>',
-  'Git': '<i class="devicon-git-plain colored"></i>',
-  'GitHub': '<i class="devicon-github-original colored"></i>',
-  'GraphQL': '<i class="devicon-graphql-plain colored"></i>',
-  'Heroku': '<i class="devicon-heroku-original colored"></i>',
-  'HTML5': '<i class="devicon-html5-plain colored"></i>',
-  'Java': '<i class="devicon-java-plain colored"></i>',
-  'JavaScript': '<i class="devicon-javascript-plain colored"></i>',
-  'Jest': '<i class="devicon-jest-plain colored"></i>',
-  'jQuery': '<i class="devicon-jquery-plain colored"></i>',
-  'Kotlin': '<i class="devicon-kotlin-plain colored"></i>',
-  'Linux': '<i class="devicon-linux-plain theme-light:colored"></i>',
-  'MySQL': '<i class="devicon-mysql-plain colored"></i>',
-  'Next.js': '<i class="devicon-nextjs-original-wordmark theme-light:colored"></i>',
-  'Nginx': '<i class="devicon-nginx-original colored"></i>',
-  'npm': '<i class="devicon-npm-original-wordmark colored"></i>',
-  'Pandas': '<i class="devicon-pandas-original colored"></i>',
-  'Python': '<i class="devicon-python-plain colored"></i>',
-  'R': '<i class="devicon-r-original colored"></i>',
-  'Redis': '<i class="devicon-redis-plain colored"></i>',
-  'Redux': '<i class="devicon-redux-original colored"></i>',
-  'Sass': '<i class="devicon-sass-original colored"></i>',
-  'Sketch': '<i class="devicon-sketch-line colored"></i>',
-  'SQLite': '<i class="devicon-sqlite-plain colored"></i>',
-  'TensorFlow': '<i class="devicon-tensorflow-original colored"></i>',
-  'TypeScript': '<i class="devicon-typescript-plain colored"></i>',
-  'Unity': '<i class="devicon-unity-original colored"></i>',
-  'Webpack': '<i class="devicon-webpack-plain colored"></i>',
-  'Windows': '<i class="devicon-windows8-original colored"></i>',
-  'Wordpress': '<i class="devicon-wordpress-plain colored"></i>',
-  'Yarn': '<i class="devicon-yarn-plain colored"></i>',
-  'Zeit': '<i class="devicon-zeit-plain colored"></i>',
-  'Docker': '<i class="devicon-docker-plain colored"></i>',
-  'Kubernetes': '<i class="devicon-kubernetes-plain colored"></i>',
-  'AWS': '<i class="devicon-amazonwebservices-original colored"></i>',
-  'Azure': '<i class="devicon-azure-plain colored"></i>',
-  'GoogleCloud': '<i class="devicon-googlecloud-plain colored"></i>',
-  'DigitalOcean': '<i class="devicon-digitalocean-plain colored"></i>',
-  'Netlify': '<i class="devicon-netlify-original colored"></i>',
-  'Vercel': '<i class="devicon-vercel-plain colored"></i>',
-  'GitHubActions': '<i class="devicon-github-original colored"></i>',
-  'TravisCI': '<i class="devicon-travisci-plain colored"></i>',
-  'CircleCI': '<i class="devicon-circleci-plain colored"></i>',
-  'Jenkins': '<i class="devicon-jenkins-line colored"></i>',
-  'GitLab': '<i class="devicon-gitlab-plain colored"></i>',
-  'Bitbucket': '<i class="devicon-bitbucket-original colored"></i>',
-  'Csharp': '<i class="devicon-csharp-plain colored"></i>',
-  'Bash': '<i class="devicon-bash-plain theme-light:colored"></i>',
-  'PowerShell': '<i class="devicon-powershell-plain theme-light:colored"></i>',
-};
-
-/**
- * Custom hook to load and manage projects data
- */
 export const useProjects = () => {
-  const [projects, setProjects] = useState<Project[]>([]);
+  const [githubRepos, setGithubRepos] = useState<GitHubRepo[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<Error | null>(null);
 
-  // Load projects from JSON file
-  useEffect(() => {
-    const loadProjects = async () => {
+  const loadProjects = useCallback(async () => {
+    const fetchGitHubRepos = async (): Promise<GitHubRepo[]> => {
       try {
-        setLoading(true);
-        const response = await fetch('/data/works.json');
+        const response = await fetch(
+          `${GITHUB_API}/users/${GITHUB_USERNAME}/repos?per_page=100&sort=updated`,
+          {
+            headers: {
+              'Accept': 'application/vnd.github.v3+json',
+              ...(process.env.REACT_APP_GITHUB_TOKEN ? {
+                'Authorization': `token ${process.env.REACT_APP_GITHUB_TOKEN}`
+              } : {})
+            }
+          }
+        );
+
         if (!response.ok) {
-          throw new Error(`Failed to fetch projects: ${response.status}`);
+          throw new Error(`GitHub API error: ${response.statusText}`);
         }
-        const data = await response.json();
-        setProjects(data.projects);
+
+        const repos = await response.json();
+        
+        // Filtrar repositórios
+        const filteredRepos = repos.filter((repo: GitHubRepo) => {
+          return !repo.private && 
+                 !repo.fork && 
+                 !ignoredRepos.includes(repo.name) &&
+                 (repo.description || projectOverrides[repo.name]?.description);
+        });
+
+        // Armazenar em cache
+        localStorage.setItem('github_repos_cache', JSON.stringify(filteredRepos));
+        localStorage.setItem('github_repos_cache_time', Date.now().toString());
+        
+        return filteredRepos;
       } catch (err) {
-        setError(err instanceof Error ? err : new Error('Failed to load projects'));
-        setLoading(false);
-      } finally {
-        setLoading(false);
+        console.error('Error fetching GitHub repos:', err);
+        
+        // Tentar usar cache em caso de erro
+        const cached = localStorage.getItem('github_repos_cache');
+        if (cached) {
+          console.warn('Using cached GitHub data due to API error');
+          return JSON.parse(cached);
+        }
+        
+        throw err;
       }
     };
 
-    loadProjects();
+    try {
+      setLoading(true);
+      setError(null);
+      
+      const repos = await fetchGitHubRepos();
+      setGithubRepos(repos);
+    } catch (err) {
+      setError(err instanceof Error ? err : new Error('Failed to load projects'));
+    } finally {
+      setLoading(false);
+    }
   }, []);
+
+  // Combinar dados do GitHub com configuração manual
+  const projects = useMemo((): Project[] => {
+    // Processar repositórios do GitHub
+    const githubProjects: Project[] = githubRepos.map(repo => {
+      const override = projectOverrides[repo.name] || {};
+      
+      // Detectar tecnologias automaticamente
+      let autoTechnologies: string[] = [];
+      if (repo.language && technologyMapper[repo.language]) {
+        autoTechnologies = technologyMapper[repo.language];
+      }
+      
+      // Adicionar tecnologias baseadas nos topics
+      repo.topics.forEach((topic: string) => {
+        const topicMap: Record<string, string> = {
+          'react': 'React',
+          'react-native': 'React Native',
+          'nextjs': 'Next.js',
+          'nodejs': 'Node.js',
+          'firebase': 'Firebase',
+          'mongodb': 'MongoDB',
+          'expo': 'Expo',
+          'typescript': 'TypeScript'
+        };
+        
+        if (topicMap[topic.toLowerCase()]) {
+          autoTechnologies.push(topicMap[topic.toLowerCase()]);
+        }
+      });
+
+      return {
+        id: repo.name,
+        name: override.name || repo.name,
+        description: override.description || repo.description || '',
+        score: override.score || 70, // Score padrão para repos sem override
+        image: override.image || '/img/works/default.webp',
+        color: override.color || '#6b7280',
+        technologies: override.technologies || Array.from(new Set(autoTechnologies)),
+        github: repo.html_url,
+        demo: override.demo || repo.homepage || repo.html_url,
+        category: override.category || 'web',
+        featured: override.featured || false,
+        // Dados extras do GitHub
+        stars: repo.stargazers_count,
+        forks: repo.forks_count,
+        language: repo.language || undefined,
+        topics: repo.topics,
+        lastUpdate: repo.updated_at,
+        isFromGitHub: true
+      };
+    });
+
+    // Combinar projetos manuais + GitHub
+    const allProjects = [...manualProjects, ...githubProjects];
+
+    // Ordenar por score (descendente) e depois por featured
+    return allProjects.sort((a, b) => {
+      if (a.featured && !b.featured) return -1;
+      if (!a.featured && b.featured) return 1;
+      return b.score - a.score;
+    });
+  }, [githubRepos]);
+
+  useEffect(() => {
+    loadProjects();
+  }, [loadProjects]);
 
   return {
     projects,
     loading,
     error,
+    refresh: loadProjects,
     techIcons
   };
 };

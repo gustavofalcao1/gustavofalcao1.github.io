@@ -1,5 +1,6 @@
 import React from 'react';
-import { Project, techIcons } from '../hooks/useProjects';
+import { Project } from '../types/project';
+import { techIcons } from '../lib/icons';
 import { useI18n } from '../hooks/useI18n';
 
 interface ProjectCardProps {
